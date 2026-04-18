@@ -10,8 +10,6 @@
 
 ## Table of Contents
 
-## Table of Contents
-
 - [About the product](#about-the-product)
   - [Key features](#key-features)
 - [Technology stack](#technology-stack)
