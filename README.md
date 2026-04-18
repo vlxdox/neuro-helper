@@ -246,7 +246,7 @@ The architecture provides for horizontal scaling:
 
 ## Authors
 
-**NeuroHelper** is created and maintained by the **Mindal™** team.
+**Neuro.Helper** is created and maintained by the **Mindal™** team.
 
 For questions, collaboration inquiries, or support, please open an issue in this repository.
 
