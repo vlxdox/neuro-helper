@@ -184,7 +184,7 @@ The client part is a single-page application with dynamic rendering and client r
     - `FavoritesPage` — saved neural networks 
     - `HistoryPage` — query history with pagination
 - `src/components/` — reusable UI components
-    - `NeuralCards` - neural network cards with information about price, complexity and API
+    - `NeuralCards` — neural network cards with information about price, complexity and API
     - `FilterChips` — display of selected filters
     - `Sidebar` — side navigation menu
 - `src/services/` — API interaction layer
