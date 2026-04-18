@@ -1,60 +1,60 @@
-# 🧠 Нейро.Помощник
+# Neuro.Helper
 
 <div align="center">
   <img src="frontend/public/logo.png" alt="NeuroHelper Logo" width="120" />
-  <p><strong>Интеллектуальный навигатор по миру нейросетей</strong></p>
-  <p>Экономьте до 40% времени на поиске подходящих AI-инструментов</p>
+  <p><strong>An intelligent navigator in the world of neural networks</strong></p>
+  <p>Save up to 40% of your time searching for suitable AI tools</p>
 </div>
 
 ---
 
-## О продукте
+## About the product
 
-**Нейро.Помощник** — это рекомендательная платформа для быстрого подбора нейросетевых сервисов под конкретные бизнес-задачи. Система анализирует текстовое описание задачи, извлекает ключевые параметры и предлагает оптимальные решения с учётом бюджета, сложности освоения и наличия API.
+** Neuro.Helper** is a recommendation platform for quickly selecting neural network services for specific business tasks. The system analyzes the text description of the task, extracts key parameters, and offers optimal solutions based on budget, complexity, and API availability.
 
-### Ключевые возможности
+### Key features
 
-- **Семантический поиск** — опишите задачу естественным языком, алгоритм сам определит релевантные теги
-- **Гибкая фильтрация** — фильтры по цене, сложности, наличию API и типу решаемых задач
-- **Интерактивный ассистент** — уточняющие вопросы для максимально точного подбора
-- **Персональные коллекции** — сохраняйте нейросети в избранное для быстрого доступа
-- **История запросов** — все поисковые сессии сохраняются с возможностью повторного использования
-- **Аналитика использования** — отслеживайте активность, популярные фильтры и статистику
-- **Темизация** — светлая и тёмная темы оформления
-- **OAuth 2.0** — безопасная авторизация через Google
+- **Semantic search** — describe the task in natural language, the algorithm will determine the relevant tags by itself
+- **Flexible filtering** — filters based on price, complexity, API availability and type of tasks to be solved
+- **Interactive assistant** — clarifying questions for the most accurate selection
+- **Personal Collections** — save neural networks to favorites for quick access
+- **Query history** — all search sessions are saved with the possibility of reuse
+- **Usage Analytics** — Track activity, popular filters and statistics
+- **Temization** — light and dark design themes
+- **OAuth 2.0** — secure authorization via Google
 
 ---
 
-## Технологический стек
+## Technology stack
 
-**Фронтенд**
+**Frontend**
 React 18, Vite, React Router DOM, Feather Icons, CSS Modules
 
-**Бэкенд**
+**Backend**
 FastAPI, SQLAlchemy, SQLite, Authlib (Google OAuth), Ollama API
 
-**Инфраструктура**
+**Infrastructure**
 Uvicorn, Python 3.10+, Node.js 18+
 
 ---
 
-## Установка и запуск
+## Installation and launch
 
-### Системные требования
+### System requirements
 
-- Python 3.10 или выше
-- Node.js 18 или выше
-- Ollama с установленной моделью llama3.2:3b
+- Python 3.10 or higher
+- Node.js 18 or higher
+- Ollama with the installed llama3.2:3b model
 
-### Шаг 1. Установка Ollama и языковой модели
+### Step 1. Installing Ollama and the language model
 
-Скачайте и установите Ollama с официального сайта, затем выполните:
+Download and install Ollama from the official website, then run:
 
 ```bash
 ollama pull llama3.2:3b
 ```
 
-### Шаг 2. Настройка и запуск бэкенда
+### Step 2. Setting up and launching the backend
 
 ```bash
 cd backend
@@ -62,9 +62,9 @@ pip install -r requirements.txt
 python run.py
 ```
 
-Сервер API запустится на порту 8080.
+The API server will start on port 8080.
 
-### Шаг 3. Настройка и запуск фронтенда
+### Step 3. Setting up and launching the frontend
 
 ```bash
 cd frontend
@@ -72,148 +72,162 @@ npm install
 npm run dev -- --host
 ```
 
-Веб-интерфейс будет доступен на порту 5173.
+The web interface will be available on port 5173.
 
-### Шаг 4. Доступ к приложению
+### Step 4. Access to the application
 
-После запуска обоих серверов приложение доступно по следующим адресам:
+After launching both servers, the application is available at the following addresses:
 
-**Локальный доступ (разработка)**
+**Local access (development)**
 `
 http://localhost:5173
 `
 
-**Доступ с других устройств в локальной сети**
+**Access from other devices on the local network**
 
-Для тестирования с мобильных устройств или других компьютеров в той же сети:
+For testing from mobile devices or other computers on the same network:
 
-1. Включите режим мобильного хотспота на устройстве, где запущен сервер
-2. Подключите целевое устройство к созданной Wi-Fi сети
-3. Откройте браузер и перейдите по адресу: `http://192.168.137.1.nip.io:5173`
+1. Turn on the mobile hotspot mode on the device where the server is running
+2. Connect the target device to the created Wi-Fi network
+3. Open a browser and navigate to: `http://192.168.137.1.nip.io:5173 `
 
 
-Сервис "nip.io" автоматически резолвит IP-адрес в доменное имя, что необходимо для корректной работы Google OAuth с внешних устройств.
+Service "nip.io " automatically resolves the IP address to the domain name, which is necessary for Google OAuth to work correctly from external devices.
 
-> **Примечание:** Если IP-адрес вашего сервера отличается от указанного, замените `192.168.137.1` на актуальный адрес. Узнать его можно командой `ipconfig` (Windows) или `ifconfig` (Linux/Mac).
+> **Note:** If your server's IP address differs from the specified one, replace `192.168.137.1' with the current address. You can find it with the command `ipconfig' (Windows) or `ifconfig' (Linux/Mac).
 
 ---
 
-## Конфигурация Google OAuth
+## Google OAuth Configuration
 
-Для работы авторизации необходимо создать проект в Google Cloud Console и настроить OAuth 2.0.
+For authorization to work, you need to create a project in the Google Cloud Console and configure OAuth 2.0.
 
-1. Перейдите в раздел **APIs & Services → Credentials**
-2. Создайте **OAuth 2.0 Client ID**
-3. В поле **Authorized redirect URIs** добавьте:
-   - `http://localhost:8080/auth/google/callback`
+1. Go to **APIs & Services → Credentials**
+2. Create an **OAuth 2.0 Client ID**
+3. In the **Authorized redirect URIs** field, add:
+- `http://localhost:8080/auth/google/callback `
    - `http://192.168.137.1.nip.io:8080/auth/google/callback`
-4. Скопируйте **Client ID** и **Client Secret** в файл `.env` бэкенда:
+4. Copy **Client ID** and **Client Secret** to the `.env' file of the backend:
 
 ```env
 VITE_GOOGLE_CLIENT_ID=your_client_id_here
 VITE_GOOGLE_CLIENT_SECRET=your_client_secret_here
 ```
 
-После внесения изменений перезапустите бэкенд-сервер.
+After making the changes, restart the backend server.
 
 ---
 
-## Архитектура продукта
+## Product Architecture
 
-**Нейро.Помощник** построен на классической клиент-серверной архитектуре с разделением на независимые фронтенд и бэкенд компоненты, взаимодействующие через REST API.
+** Neuro.The Assistant** is based on a classic client-server architecture, divided into independent frontend and backend components that interact via the REST API.
 
-### Бэкенд (FastAPI)
+### Backend (FastAPI)
 
-Серверная часть реализована на асинхронном фреймворке FastAPI, обеспечивающем высокую производительность и автоматическую генерацию OpenAPI-документации.
+The server part is implemented on the asynchronous FastAPI framework, which provides high performance and automatic generation of OpenAPI documentation.
 
-**Структура бэкенда:**
+**Backend structure:**
 
-- `app/main.py` — точка входа приложения, конфигурация CORS и middleware
-- `app/routers/` — обработчики API-эндпоинтов
-  - `auth.py` — аутентификация через Google OAuth 2.0, выдача JWT-токенов
-  - `neural_nets.py` — поиск и фильтрация нейросетей по тегам
-  - `chats.py` — сохранение и получение истории запросов
-  - `favorites.py` — управление избранными нейросетями
-  - `ollama.py` — интеграция с локальной LLM для извлечения тегов
-- `app/database/` — модели SQLAlchemy и сессии базы данных
-- `app/services/` — бизнес-логика, включая создание и валидацию JWT
+- `app/main.py ` — application entry point, CORS and middleware configuration
+- `app/routers/` — API endpoint handlers
+- `auth.py ` — authentication via Google OAuth 2.0, issuing JWT tokens
+- `neural_nets.py ` — search and filtering of neural networks by tags
+- `chats.py ` — saving and retrieving query history
+  - `favorites.py ` — management of selected neural networks
+  - `ollama.py ` — integration with the local LLM for tag extraction
+- `app/database/` — SQLAlchemy models and database sessions
+- `app/services/` — business logic, including JWT creation and validation
 
-**Ключевые технологии бэкенда:**
+**Key backend technologies:**
 
-- FastAPI — веб-фреймворк
-- SQLAlchemy — ORM для работы с SQLite
-- Authlib — OAuth 2.0 клиент для Google
-- PyJWT — генерация и проверка JWT-токенов
-- Uvicorn — ASGI-сервер
+- FastAPI — web framework
+- SQLAlchemy — ORM for working with SQLite
+- Authlib — OAuth 2.0 client for Google
+- PyJWT — generation and verification of JWT tokens
+- Uvicorn — ASGI server
 
-### Фронтенд (React + Vite)
+### Frontend (React + Vite)
 
-Клиентская часть представляет собой одностраничное приложение с динамическим рендерингом и клиентской маршрутизацией.
+The client part is a single-page application with dynamic rendering and client routing.
 
-**Структура фронтенда:**
+**Frontend structure:**
 
-- `src/pages/` — страницы приложения
-  - `MainPage` — главный экран с поисковой строкой и переключением режимов
-  - `ProfilePage` — личный кабинет с аналитикой использования
-  - `FavoritesPage` — сохранённые нейросети
-  - `HistoryPage` — история запросов с пагинацией
-- `src/components/` — переиспользуемые UI-компоненты
-  - `NeuralCards` — карточки нейросетей с информацией о цене, сложности и API
-  - `FilterChips` — отображение выбранных фильтров
-  - `Sidebar` — боковое меню навигации
-- `src/services/` — слой взаимодействия с API
-  - `api.js` — клиент для HTTP-запросов с автоматической подстановкой JWT
-- `src/context/` — React-контекст для управления темой оформления
-- `src/styles/` — глобальные стили и CSS-переменные
+- `src/pages/` — application pages
+- `MainPage` — main screen with search bar and mode switching
+- `ProfilePage` — personal account with usage analysis
+- `FavoritesPage` — saved neural
+networks - `HistoryPage` — query history with pagination
+- `src/components/` — reusable UI components
+- `NeuralCards` - neural network cards with information about price, complexity and API
+- `FilterChips' — display of selected filters
+  - `Sidebar' — side navigation menu
+- `src/services/` — API interaction layer
+  - `api.js ` — client for HTTP requests with automatic JWT substitution
+- `src/context/` — React-context for theme management
+- `src/styles/` — global styles and CSS variables
 
-**Ключевые технологии фронтенда:**
+**Key technologies of the frontend:**
 
-- React 18 — UI-библиотека
-- Vite — инструмент сборки и dev-сервер
-- React Router DOM — маршрутизация
-- Feather Icons — иконки интерфейса
-- CSS-переменные — динамическая темизация
+- React 18 — UI library
+- Vite — build tool and dev server
+- React Router DOM — routing
+- Feather Icons — interface icons
+- CSS variables — dynamic theming
 
-### Взаимодействие компонентов
+### Component interaction
 
-1. Пользователь вводит текстовый запрос или выбирает фильтры на фронтенде
-2. Запрос отправляется на бэкенд через REST API с JWT-токеном в заголовке
-3. При необходимости бэкенд обращается к Ollama API для извлечения семантических тегов из текста
-4. Бэкенд выполняет поиск по базе нейросетей с учётом весов тегов и выбранных фильтров
-5. Результаты возвращаются фронтенду и отображаются в виде карточек
-6. Пользователь может сохранить нейросеть в избранное — запрос уходит на соответствующий эндпоинт
-7. Каждый успешный поиск сохраняется в истории чатов для последующего доступа
+1. The user enters a text query or selects filters on the frontend
+2. The request is sent to the backend via the REST API with the JWT token in the header
+3. If necessary, the backend accesses the Ollama API to extract semantic tags from the text.
+4. The backend performs a search through the neural network database, taking into account the weights of the tags and the selected filters.
+5. The results are returned to the frontend and displayed as flashcards.
+6. The user can save the neural network to favorites — the request goes to the appropriate endpoint.
+7. Each successful search is saved in the chat history for later access
 
-### База данных
+### Database
 
-Используется SQLite с ORM SQLAlchemy. Основные сущности:
+SQLite is used with the SQLAlchemy ORM. Basic entities:
 
-- **User** — пользователи, авторизованные через Google
-- **NeuralNet** — каталог нейросетей с тегами, ценовой категорией, сложностью
-- **Chat** — история поисковых запросов с привязкой к пользователю
-- **Favorite** — избранные нейросети пользователя
+- **User** — users logged in via Google
+- **NeuralNet** — catalog of neural networks with tags, price category, complexity
+- **Chat** — history of search queries linked to the user
+- **Favorite** — user's favorites neural networks
 
-### Безопасность
+### Security
 
-- Аутентификация через Google OAuth 2.0 с верификацией токена
-- JWT-токены с ограниченным сроком жизни для доступа к API
-- CORS-политики с ограниченным списком разрешённых источников
-- Переменные окружения для хранения чувствительных данных
+- Authentication via Google OAuth 2.0 with token verification
+- JWT tokens with a limited lifetime for API access
+- CORS policies with a limited list of allowed sources
+- Environment variables for storing sensitive data
 
-### Масштабируемость
+### Scalability
 
-Архитектура предусматривает горизонтальное масштабирование:
+The architecture provides for horizontal scaling:
 
-- Бэкенд не хранит состояние сессий — возможен запуск нескольких экземпляров за балансировщиком
-- SQLite может быть заменён на PostgreSQL без изменения кодовой базы
-- Фронтенд собирается в статические файлы и может раздаваться через CDN
+- The backend does not store the session status — it is possible to run multiple instances behind the load balancer
+- SQLite can be replaced with PostgreSQL without changing the codebase
+- The frontend is assembled into static files and can be distributed via CDN
 
 ---
 
-## Планы по развитию
+## Development plans
 
-- Интеграция с публичным API для сторонних разработчиков
-- Построение цепочек нейросетей для решения комплексных задач
-- Расширение базы знаний до нескольких тысяч моделей
-- Внедрение системы рейтингов и отзывов пользователей
-- Локализация на английский язык и выход на международный рынок
+- Integration with a public API for third-party developers
+- Building neural network chains to solve complex problems
+- Expanding the knowledge base to several thousand models
+- Implementation of a system of ratings and user reviews
+- Localization into English and entry into the international market
+
+---
+
+## Authors
+
+**NeuroHelper** is created and maintained by the **NeuroTech™** team.
+
+For questions, collaboration inquiries, or support, please open an issue in this repository.
+
+---
+
+<div align="center">
+  <p>Made with ❤️ by <strong>NeuroTech™</strong></p>
+</div>
