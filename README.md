@@ -10,11 +10,11 @@
 
 ## Table of Contents
 
+## Table of Contents
+
 - [About the product](#about-the-product)
   - [Key features](#key-features)
 - [Technology stack](#technology-stack)
-  - [Frontend dependencies](#frontend-dependencies)
-  - [Backend dependencies](#backend-dependencies)
 - [Installation and launch](#installation-and-launch)
   - [System requirements](#system-requirements)
   - [Step 1. Installing Ollama and the language model](#step-1-installing-ollama-and-the-language-model)
