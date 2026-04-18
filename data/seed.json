@@ -1,0 +1,4754 @@
+{
+  "neural_nets": [
+    {
+      "name": "ChatGPT",
+      "description": "Универсальный текстовый ассистент, генерация текстов, код, анализ, решение математических задач",
+      "url": "https://chat.openai.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "написание кода",
+        "анализ данных",
+        "создание презентаций",
+        "математика",
+        "обучение"
+      ]
+    },
+    {
+      "name": "Claude AI",
+      "description": "Анализ больших текстов, работа с документами, безопасность, длинный контекст, математика",
+      "url": "https://claude.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация текста",
+        "анализ данных",
+        "математика",
+        "обучение",
+        "написание кода"
+      ]
+    },
+    {
+      "name": "DeepSeek",
+      "description": "Мощная нейросеть от DeepSeek, бесплатный доступ, работа с файлами, математика",
+      "url": "https://chat.deepseek.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "zh"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "написание кода",
+        "анализ данных",
+        "математика",
+        "обучение"
+      ]
+    },
+    {
+      "name": "Gemini",
+      "description": "Нейросеть от Google, интеграция с Gmail, Docs, YouTube, решение задач",
+      "url": "https://gemini.google.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "en",
+        "ru"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация текста",
+        "анализ данных",
+        "математика",
+        "обучение"
+      ]
+    },
+    {
+      "name": "Perplexity AI",
+      "description": "Поиск с AI, исследования, ответы с источниками, математика",
+      "url": "https://perplexity.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация текста",
+        "анализ данных",
+        "математика",
+        "обучение"
+      ]
+    },
+    {
+      "name": "Mistral AI",
+      "description": "Мощная открытая модель, работа с текстом, кодом, анализ данных",
+      "url": "https://mistral.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "написание кода",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Midjourney",
+      "description": "Генерация изображений высокого качества по текстовым описаниям",
+      "url": "https://midjourney.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "GigaChat",
+      "description": "Нейросеть от Сбера, генерация текста, ответы на вопросы, работа с документами, код",
+      "url": "https://developers.sber.ru/gigachat",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "написание кода",
+        "анализ данных",
+        "математика",
+        "обучение"
+      ]
+    },
+    {
+      "name": "Leonardo AI",
+      "description": "Генерация изображений и иллюстраций для игр и дизайна",
+      "url": "https://leonardo.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "TensorArt",
+      "description": "Генерация изображений, бесплатные ежедневные токены",
+      "url": "https://tensor.art",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "DALL·E 3",
+      "description": "Генерация изображений от OpenAI, высокое качество, интеграция с ChatGPT",
+      "url": "https://openai.com/dall-e-3",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Stable Diffusion",
+      "description": "Открытая модель для генерации изображений, множество стилей",
+      "url": "https://stability.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "high",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Runway ML",
+      "description": "Генерация и редактирование видео, AI-инструменты для креаторов",
+      "url": "https://runwayml.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация видео",
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Synthesia",
+      "description": "Создание видео с AI-аватарами",
+      "url": "https://synthesia.io",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "HeyGen",
+      "description": "Создание видео с реалистичными аватарами, озвучка",
+      "url": "https://heygen.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "Pika Labs",
+      "description": "Генерация видео из текста и изображений",
+      "url": "https://pika.art",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "Kaiber",
+      "description": "Создание анимаций и видео из изображений",
+      "url": "https://kaiber.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "CapCut AI",
+      "description": "Редактирование видео с AI, автогенерация субтитров",
+      "url": "https://capcut.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en",
+        "zh"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "GitHub Copilot",
+      "description": "AI-ассистент для написания кода, интеграция с IDE",
+      "url": "https://github.com/features/copilot",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web",
+        "github"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Codeium",
+      "description": "Бесплатный AI для кода, аналог Copilot",
+      "url": "https://codeium.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Cursor",
+      "description": "AI-редактор кода с интеграцией GPT-4",
+      "url": "https://cursor.sh",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Tabnine",
+      "description": "AI для автодополнения кода",
+      "url": "https://tabnine.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Replit AI",
+      "description": "AI-помощник для написания и отладки кода",
+      "url": "https://replit.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Amazon CodeWhisperer",
+      "description": "AI для написания кода от AWS, бесплатный для разработчиков",
+      "url": "https://aws.amazon.com/codewhisperer",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Notion AI",
+      "description": "AI-помощник для заметок, документов, анализа",
+      "url": "https://notion.so",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Otter.ai",
+      "description": "Транскрибация встреч, заметки с AI",
+      "url": "https://otter.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "анализ данных",
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "Grammarly",
+      "description": "Проверка грамматики, стиля текста",
+      "url": "https://grammarly.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста"
+      ]
+    },
+    {
+      "name": "Microsoft Copilot",
+      "description": "AI-ассистент для Office 365, анализ данных в Excel",
+      "url": "https://copilot.microsoft.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Julius AI",
+      "description": "Анализ данных, визуализация, работа с CSV и Excel",
+      "url": "https://julius.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Monica AI",
+      "description": "Чат-ассистент для анализа документов и веб-страниц",
+      "url": "https://monica.im",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Gamma.app",
+      "description": "Создание презентаций с помощью AI",
+      "url": "https://gamma.app",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "создание презентаций"
+      ]
+    },
+    {
+      "name": "Tome",
+      "description": "AI для создания презентаций и историй",
+      "url": "https://tome.app",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация текста",
+        "создание презентаций"
+      ]
+    },
+    {
+      "name": "Beautiful.ai",
+      "description": "Умный конструктор презентаций",
+      "url": "https://beautiful.ai",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация текста",
+        "создание презентаций"
+      ]
+    },
+    {
+      "name": "Canva AI",
+      "description": "Дизайн с AI, генерация изображений, шаблоны для презентаций",
+      "url": "https://canva.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений",
+        "создание презентаций"
+      ]
+    },
+    {
+      "name": "SlidesAI",
+      "description": "Автоматическое создание слайдов из текста",
+      "url": "https://slidesai.io",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация текста",
+        "создание презентаций"
+      ]
+    },
+    {
+      "name": "Suno AI",
+      "description": "Генерация музыки и песен по текстовому описанию",
+      "url": "https://suno.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация музыки"
+      ]
+    },
+    {
+      "name": "AIVA",
+      "description": "Композитор на основе ИИ, создание классической музыки",
+      "url": "https://aiva.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация музыки"
+      ]
+    },
+    {
+      "name": "Mubert",
+      "description": "Генерация музыки для видео, подкастов",
+      "url": "https://mubert.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация музыки"
+      ]
+    },
+    {
+      "name": "Soundraw",
+      "description": "Генерация фоновой музыки, настройка стиля и темпа",
+      "url": "https://soundraw.io",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация музыки"
+      ]
+    },
+    {
+      "name": "Beatoven",
+      "description": "Создание уникальной музыки для видео и контента",
+      "url": "https://beatoven.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "генерация музыки"
+      ]
+    },
+    {
+      "name": "ElevenLabs",
+      "description": "Озвучка текста, голосовые клоны, реалистичные голоса",
+      "url": "https://elevenlabs.io",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "Whisper",
+      "description": "Распознавание речи и транскрибация аудио",
+      "url": "https://openai.com/whisper",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных",
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "Adobe Podcast",
+      "description": "Улучшение качества аудио, шумоподавление",
+      "url": "https://podcast.adobe.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "Descript",
+      "description": "Редактирование аудио и видео через текст, транскрибация",
+      "url": "https://descript.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "озвучка текста",
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "Meshcapade",
+      "description": "Создание 3D-анимаций и персонажей",
+      "url": "https://meshcapade.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "high",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "Luma AI",
+      "description": "Создание 3D-моделей из фото",
+      "url": "https://lumalabs.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "Meshy",
+      "description": "Генерация 3D-моделей из текста и изображений",
+      "url": "https://meshy.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "Wolfram Alpha",
+      "description": "Решение математических задач, формулы, графики, вычисления, обучение",
+      "url": "https://wolframalpha.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных",
+        "математика",
+        "обучение"
+      ]
+    },
+    {
+      "name": "Symbolab",
+      "description": "Пошаговое решение уравнений, алгебра, тригонометрия, обучение",
+      "url": "https://symbolab.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "математика",
+        "обучение"
+      ]
+    },
+    {
+      "name": "MathGPT",
+      "description": "Специализированная нейросеть для решения математических задач",
+      "url": "https://math-gpt.org",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "математика",
+        "обучение"
+      ]
+    },
+    {
+      "name": "Khanmigo",
+      "description": "AI-репетитор от Khan Academy, обучение математике, программированию, гуманитарным наукам",
+      "url": "https://khanmigo.khanacademy.org",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "en"
+      ],
+      "sanctions": true,
+      "tags": [
+        "обучение",
+        "математика",
+        "генерация текста"
+      ]
+    },
+    {
+      "name": "Duolingo Max",
+      "description": "Изучение языков с AI, практика разговора, объяснение ошибок",
+      "url": "https://duolingo.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Quizlet AI",
+      "description": "Создание учебных карточек, тесты, обучение с AI",
+      "url": "https://quizlet.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Speak",
+      "description": "AI для изучения английского языка, практика разговорной речи",
+      "url": "https://speak.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Socratic",
+      "description": "Помощник для учёбы от Google, решение задач по фото, объяснение тем",
+      "url": "https://socratic.org",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение",
+        "математика"
+      ]
+    },
+    {
+      "name": "Kimi AI",
+      "description": "Китайская нейросеть с длинным контекстом до 2 млн токенов, работа с файлами, аналитика",
+      "url": "https://kimi.moonshot.cn",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "zh"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "анализ данных",
+        "обучение"
+      ]
+    },
+    {
+      "name": "Qwen",
+      "description": "Мощная языковая модель от Alibaba, работа с текстом, кодом, файлами",
+      "url": "https://qwenlm.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "zh"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "написание кода",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Cohere",
+      "description": "Корпоративная AI-платформа, генерация текста, поиск, классификация",
+      "url": "https://cohere.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "AI21 Labs",
+      "description": "Jurassic-2 модель, работа с текстом, аналитика, суммаризация",
+      "url": "https://ai21.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "You.com AI",
+      "description": "AI-поисковик с чатом, генерация текста, ответы с источниками",
+      "url": "https://you.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Phind",
+      "description": "AI-поиск для разработчиков, ответы на технические вопросы, код",
+      "url": "https://phind.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Poe AI",
+      "description": "Платформа с доступом к разным моделям (ChatGPT, Claude, Llama)",
+      "url": "https://poe.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "написание кода",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "HuggingChat",
+      "description": "Открытый чат-ассистент от Hugging Face, доступ к разным моделям",
+      "url": "https://huggingface.co/chat",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Janitor AI",
+      "description": "Создание и общение с AI-персонажами, ролевые игры",
+      "url": "https://janitorai.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста"
+      ]
+    },
+    {
+      "name": "Character AI",
+      "description": "Общение с AI-персонажами, известные личности, вымышленные герои",
+      "url": "https://character.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста"
+      ]
+    },
+    {
+      "name": "Playground AI",
+      "description": "Генерация и редактирование изображений, множество стилей и фильтров",
+      "url": "https://playgroundai.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Ideogram AI",
+      "description": "Генерация изображений с отличным текстом, типографика",
+      "url": "https://ideogram.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Kandinsky",
+      "description": "Нейросеть от Сбера для генерации изображений, поддержка русского языка",
+      "url": "https://fusionbrain.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "SeaArt AI",
+      "description": "Генерация аниме и реалистичных изображений, бесплатные токены",
+      "url": "https://seaart.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Perchance AI",
+      "description": "Генерация изображений, персонажей, фонов, бесплатно без ограничений",
+      "url": "https://perchance.org/ai-text-to-image-generator",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "DreamStudio",
+      "description": "Официальный интерфейс Stable Diffusion, точная настройка генерации",
+      "url": "https://dreamstudio.ai",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Clipdrop",
+      "description": "Редактирование изображений, удаление фона, улучшение качества",
+      "url": "https://clipdrop.co",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Remove.bg",
+      "description": "Автоматическое удаление фона из изображений",
+      "url": "https://remove.bg",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Pixelcut",
+      "description": "AI-редактор фото, удаление объектов, улучшение качества",
+      "url": "https://pixelcut.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Photoroom",
+      "description": "Создание профессиональных фото для товаров, удаление фона",
+      "url": "https://photoroom.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "VEED.IO",
+      "description": "Онлайн-редактор видео с AI, субтитры, озвучка, перевод",
+      "url": "https://veed.io",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "Descript Overdub",
+      "description": "Создание голоса из текста, клонирование голоса для видео",
+      "url": "https://descript.com/overdub",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация видео",
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "Opus Clip",
+      "description": "Нарезка длинных видео на короткие клипы с AI",
+      "url": "https://opus.pro",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "Fliki",
+      "description": "Создание видео из текста с AI-озвучкой",
+      "url": "https://fliki.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация видео",
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "Pictory",
+      "description": "Создание коротких видео из длинных записей, автоматические субтитры",
+      "url": "https://pictory.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "InVideo",
+      "description": "Создание видео с AI, шаблоны, озвучка, субтитры",
+      "url": "https://invideo.io",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "Wondershare Virbo",
+      "description": "Создание видео с AI-аватарами и озвучкой",
+      "url": "https://virbo.wondershare.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "Elai.io",
+      "description": "Создание видео с AI-аватарами из текста",
+      "url": "https://elai.io",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "Colossyan",
+      "description": "Создание обучающих видео с AI-актерами",
+      "url": "https://colossyan.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "HeyGen Interactive",
+      "description": "Интерактивные видео с AI-аватарами для бизнеса",
+      "url": "https://heygen.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "Blackbox AI",
+      "description": "AI для поиска кода, автодополнение, конвертация кода",
+      "url": "https://blackbox.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Mutable AI",
+      "description": "AI-ускорение разработки, генерация кода, рефакторинг",
+      "url": "https://mutable.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Sourcegraph Cody",
+      "description": "AI-ассистент для написания и понимания кода",
+      "url": "https://sourcegraph.com/cody",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Continue.dev",
+      "description": "Open-source AI для VS Code, интеграция с разными моделями",
+      "url": "https://continue.dev",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "AskCodi",
+      "description": "AI-помощник для разработчиков, генерация тестов, документации",
+      "url": "https://askcodi.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "CodeGPT",
+      "description": "AI-агент для написания кода, рефакторинга, отладки",
+      "url": "https://codegpt.co",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Bito AI",
+      "description": "AI-ассистент для разработчиков, интеграция с IDE",
+      "url": "https://bito.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "MarsCode",
+      "description": "AI-помощник для программистов от ByteDance",
+      "url": "https://marscode.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "zh"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Zed AI",
+      "description": "Редактор кода с встроенным AI для автодополнения",
+      "url": "https://zed.dev",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Supermaven",
+      "description": "Быстрый AI для автодополнения кода",
+      "url": "https://supermaven.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Tableau AI",
+      "description": "Анализ данных, прогнозирование, визуализация с AI",
+      "url": "https://tableau.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "high",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Power BI Copilot",
+      "description": "AI-ассистент для анализа данных в Power BI",
+      "url": "https://powerbi.microsoft.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Zoho Zia",
+      "description": "AI-ассистент для бизнеса, анализ данных, прогнозы",
+      "url": "https://zoho.com/zia",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Salesforce Einstein",
+      "description": "AI для CRM, прогнозирование продаж, аналитика",
+      "url": "https://salesforce.com/einstein",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "high",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Obviously AI",
+      "description": "Прогнозное моделирование без кода",
+      "url": "https://obviously.ai",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Akkio",
+      "description": "Анализ данных и прогнозирование для бизнеса",
+      "url": "https://akkio.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "MonkeyLearn",
+      "description": "Анализ текста, классификация, извлечение данных",
+      "url": "https://monkeylearn.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Lumina",
+      "description": "Анализ данных с AI, визуализация, дашборды",
+      "url": "https://lumina.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "DataRobot",
+      "description": "Автоматическое машинное обучение для бизнеса",
+      "url": "https://datarobot.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "high",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "H2O AI",
+      "description": "Платформа для создания AI-моделей и аналитики",
+      "url": "https://h2o.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "high",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Decktopus",
+      "description": "Создание презентаций с AI, готовые шаблоны",
+      "url": "https://decktopus.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "создание презентаций"
+      ]
+    },
+    {
+      "name": "Presentations.ai",
+      "description": "Создание презентаций с AI-дизайнером",
+      "url": "https://presentations.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "создание презентаций"
+      ]
+    },
+    {
+      "name": "Plus AI",
+      "description": "AI для Google Slides, автоматическое создание слайдов",
+      "url": "https://plusai.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "создание презентаций"
+      ]
+    },
+    {
+      "name": "MagicSlides",
+      "description": "Создание презентаций из текста в Google Slides",
+      "url": "https://magicslides.app",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "создание презентаций"
+      ]
+    },
+    {
+      "name": "Simplified AI",
+      "description": "Дизайн, написание текста, презентации в одном месте",
+      "url": "https://simplified.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "создание презентаций"
+      ]
+    },
+    {
+      "name": "Gencraft",
+      "description": "Генерация изображений, видео, анимации из текста",
+      "url": "https://gencraft.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений",
+        "генерация видео"
+      ]
+    },
+    {
+      "name": "Lexica",
+      "description": "Поиск и генерация изображений Stable Diffusion",
+      "url": "https://lexica.art",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Artbreeder",
+      "description": "Создание и смешивание изображений, портретов, пейзажей",
+      "url": "https://artbreeder.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "NightCafe",
+      "description": "Генерация изображений, множество стилей и моделей",
+      "url": "https://nightcafe.studio",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Leonardo AI",
+      "description": "Генерация изображений и иллюстраций для игр и дизайна",
+      "url": "https://leonardo.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Boomy",
+      "description": "Создание музыки с AI, монетизация треков",
+      "url": "https://boomy.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация музыки"
+      ]
+    },
+    {
+      "name": "Soundful",
+      "description": "Генерация фоновой музыки для видео",
+      "url": "https://soundful.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация музыки"
+      ]
+    },
+    {
+      "name": "LALAL.AI",
+      "description": "Разделение аудио на треки, удаление вокала",
+      "url": "https://lalal.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "Krisp AI",
+      "description": "Шумоподавление для звонков и записей",
+      "url": "https://krisp.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "Resemble AI",
+      "description": "Клонирование голоса, создание AI-дикторов",
+      "url": "https://resemble.ai",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "Play.ht",
+      "description": "Озвучка текста реалистичными голосами",
+      "url": "https://play.ht",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "Murf AI",
+      "description": "Студийная озвучка текста, множество голосов",
+      "url": "https://murf.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "WellSaid Labs",
+      "description": "Профессиональная озвучка для бизнеса",
+      "url": "https://wellsaidlabs.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "озвучка текста"
+      ]
+    },
+    {
+      "name": "Riffusion",
+      "description": "Генерация музыки из текста, спектрограммы",
+      "url": "https://riffusion.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация музыки"
+      ]
+    },
+    {
+      "name": "Stable Audio",
+      "description": "Генерация музыки и звуковых эффектов",
+      "url": "https://stableaudio.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация музыки"
+      ]
+    },
+    {
+      "name": "Sloyd",
+      "description": "Генерация 3D-моделей для игр",
+      "url": "https://sloyd.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "Kaedim",
+      "description": "Создание 3D-моделей из изображений",
+      "url": "https://kaedim3d.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "Masterpiece X",
+      "description": "Создание 3D-анимаций без кода",
+      "url": "https://masterpiecex.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "DeepMotion",
+      "description": "Анимация 3D-персонажей из видео",
+      "url": "https://deepmotion.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "Move AI",
+      "description": "Захват движения с телефона для 3D-анимации",
+      "url": "https://move.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "high",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "NVIDIA Omniverse",
+      "description": "Платформа для 3D-дизайна и симуляции",
+      "url": "https://nvidia.com/omniverse",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "high",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "Polycam",
+      "description": "Сканирование объектов в 3D с телефона",
+      "url": "https://poly.cam",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "Alpha3D",
+      "description": "Генерация 3D-моделей из текста и фото",
+      "url": "https://alpha3d.io",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "Rodin AI",
+      "description": "Создание 3D-моделей из текстовых описаний",
+      "url": "https://rodin.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "3d моделирование"
+      ]
+    },
+    {
+      "name": "Scenario",
+      "description": "Генерация игровых ассетов и текстур",
+      "url": "https://scenario.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "3d моделирование",
+        "генерация изображений"
+      ]
+    },
+    {
+      "name": "Tutor AI",
+      "description": "Персональный AI-репетитор по разным предметам",
+      "url": "https://tutorai.me",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Knowt",
+      "description": "Создание учебных карточек и тестов с AI",
+      "url": "https://knowt.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Mindgrasp",
+      "description": "Создание заметок, конспектов, тестов из видео и текстов",
+      "url": "https://mindgrasp.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Quizizz AI",
+      "description": "Создание тестов и викторин с AI",
+      "url": "https://quizizz.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Gradescope",
+      "description": "Проверка работ студентов с AI",
+      "url": "https://gradescope.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Cognii",
+      "description": "AI для образования, оценивание открытых ответов",
+      "url": "https://cognii.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Century Tech",
+      "description": "Адаптивная платформа обучения с AI",
+      "url": "https://century.tech",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Carnegie Learning",
+      "description": "AI-платформа для обучения математике",
+      "url": "https://carnegielearning.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение",
+        "математика"
+      ]
+    },
+    {
+      "name": "Elsa Speak",
+      "description": "Изучение английского с AI, коррекция произношения",
+      "url": "https://elsaspeak.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Lingvist",
+      "description": "Изучение языков с адаптивным AI",
+      "url": "https://lingvist.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": [
+        "web"
+      ],
+      "has_api": false,
+      "complexity": "low",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "обучение"
+      ]
+    },
+    {
+      "name": "Replicate",
+      "description": "Платформа для запуска AI-моделей, генерация всего",
+      "url": "https://replicate.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "high",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "генерация изображений",
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Hugging Face Spaces",
+      "description": "Демо-площадка для AI-моделей, эксперименты",
+      "url": "https://huggingface.co/spaces",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "high",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "генерация изображений",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "AutoGPT",
+      "description": "Автономные AI-агенты для выполнения сложных задач",
+      "url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web",
+        "github"
+      ],
+      "has_api": true,
+      "complexity": "high",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "написание кода",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "LangChain",
+      "description": "Фреймворк для создания AI-приложений",
+      "url": "https://langchain.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "high",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "написание кода"
+      ]
+    },
+    {
+      "name": "Flowise AI",
+      "description": "Визуальное создание AI-воркфлоу без кода",
+      "url": "https://flowiseai.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": [
+        "web"
+      ],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "sanctions": false,
+      "tags": [
+        "генерация текста",
+        "анализ данных"
+      ]
+    },
+    {
+      "name": "Groq",
+      "description": "Сверхбыстрая генерация текста, Llama 3, Mixtral, бесплатный API",
+      "url": "https://groq.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода", "анализ данных"]
+    },
+    {
+      "name": "Claude 3 Opus",
+      "description": "Самая мощная версия Claude, сложные рассуждения, анализ кода",
+      "url": "https://claude.ai",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "написание кода", "анализ данных", "математика"]
+    },
+    {
+      "name": "Claude 3 Sonnet",
+      "description": "Баланс скорости и качества, обработка изображений",
+      "url": "https://claude.ai",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "написание кода", "анализ данных"]
+    },
+    {
+      "name": "Claude 3 Haiku",
+      "description": "Максимально быстрая версия, идеальна для чатов",
+      "url": "https://claude.ai",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "GPT-4 Turbo",
+      "description": "Более быстрая и дешёвая версия GPT-4, большой контекст",
+      "url": "https://chat.openai.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода", "анализ данных", "математика"]
+    },
+    {
+      "name": "GPT-4o",
+      "description": "Мультимодальная модель, текст, изображения, аудио, видео",
+      "url": "https://chat.openai.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода", "анализ данных", "генерация изображений"]
+    },
+    {
+      "name": "GPT-4o mini",
+      "description": "Лёгкая и быстрая мультимодальная модель",
+      "url": "https://chat.openai.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "o1-preview",
+      "description": "Модель OpenAI для сложных рассуждений, наука, математика, программирование",
+      "url": "https://chat.openai.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода", "математика"]
+    },
+    {
+      "name": "o1-mini",
+      "description": "Быстрая версия o1 для программирования",
+      "url": "https://chat.openai.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["написание кода", "математика"]
+    },
+    {
+      "name": "Llama 3 70B",
+      "description": "Мощная открытая модель от Meta, генерация текста, код",
+      "url": "https://meta.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода", "анализ данных"]
+    },
+    {
+      "name": "Llama 3 8B",
+      "description": "Лёгкая открытая модель от Meta",
+      "url": "https://meta.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Mixtral 8x7B",
+      "description": "Модель смеси экспертов от Mistral, высокая производительность",
+      "url": "https://mistral.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода", "анализ данных"]
+    },
+    {
+      "name": "Mistral 7B",
+      "description": "Эффективная открытая модель для широкого круга задач",
+      "url": "https://mistral.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Command R+",
+      "description": "Модель Cohere для RAG и длинного контекста",
+      "url": "https://cohere.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "анализ данных"]
+    },
+    {
+      "name": "Gemma 7B",
+      "description": "Открытая модель от Google, эффективная и мощная",
+      "url": "https://ai.google.dev/gemma",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Gemma 2B",
+      "description": "Лёгкая открытая модель от Google для edge-устройств",
+      "url": "https://ai.google.dev/gemma",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Falcon 180B",
+      "description": "Огромная открытая модель от TII",
+      "url": "https://falconllm.tii.ae",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода", "анализ данных"]
+    },
+    {
+      "name": "Yi-34B",
+      "description": "Мощная китайская модель от 01.AI",
+      "url": "https://yi.01.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода", "анализ данных"]
+    },
+    {
+      "name": "Solar 10.7B",
+      "description": "Эффективная модель от Upstage",
+      "url": "https://upstage.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Zephyr 7B",
+      "description": "Тонко настроенная модель для чатов на основе Mistral",
+      "url": "https://huggingface.co/HuggingFaceH4/zephyr-7b-beta",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "OpenChat 3.5",
+      "description": "Открытая чат-модель с высокой производительностью",
+      "url": "https://github.com/imoneoi/openchat",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "StarCoder2",
+      "description": "Модель для генерации кода от BigCode",
+      "url": "https://huggingface.co/bigcode/starcoder2-15b",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["написание кода"]
+    },
+    {
+      "name": "Code Llama 70B",
+      "description": "Модель Meta для программирования на 70B параметров",
+      "url": "https://ai.meta.com/blog/code-llama-70b/",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["написание кода"]
+    },
+    {
+      "name": "DeepSeek Coder",
+      "description": "Специализированная модель DeepSeek для программирования",
+      "url": "https://chat.deepseek.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["написание кода", "математика"]
+    },
+    {
+      "name": "Phind CodeLlama",
+      "description": "Модель Phind на основе CodeLlama для программирования",
+      "url": "https://phind.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["написание кода"]
+    },
+    {
+      "name": "WizardCoder",
+      "description": "Модель для программирования от WizardLM",
+      "url": "https://github.com/nlpxucan/WizardLM",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["написание кода"]
+    },
+    {
+      "name": "Magicoder",
+      "description": "Открытая модель для генерации кода",
+      "url": "https://github.com/ise-uiuc/magicoder",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["написание кода"]
+    },
+    {
+      "name": "OctoCoder",
+      "description": "Модель для генерации кода от BigCode",
+      "url": "https://huggingface.co/bigcode/octocoder",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["написание кода"]
+    },
+    {
+      "name": "Stable Code 3B",
+      "description": "Лёгкая модель Stability AI для программирования",
+      "url": "https://stability.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["написание кода"]
+    },
+    {
+      "name": "Granite Code",
+      "description": "Модель IBM для программирования",
+      "url": "https://www.ibm.com/granite",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["написание кода"]
+    },
+    {
+      "name": "SDXL Turbo",
+      "description": "Быстрая генерация изображений, текст-в-изображение",
+      "url": "https://stability.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация изображений"]
+    },
+    {
+      "name": "SD 3 Medium",
+      "description": "Новая версия Stable Diffusion, улучшенное качество",
+      "url": "https://stability.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация изображений"]
+    },
+    {
+      "name": "FLUX.1",
+      "description": "Новая мощная модель генерации изображений от Black Forest Labs",
+      "url": "https://flux.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация изображений"]
+    },
+    {
+      "name": "FLUX.1 schnell",
+      "description": "Быстрая версия FLUX для генерации изображений",
+      "url": "https://flux.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация изображений"]
+    },
+    {
+      "name": "Playground v2.5",
+      "description": "Модель для генерации фотореалистичных изображений",
+      "url": "https://playgroundai.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация изображений"]
+    },
+    {
+      "name": "Pixart-α",
+      "description": "Эффективная модель генерации изображений",
+      "url": "https://pixart-alpha.github.io",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация изображений"]
+    },
+    {
+      "name": "Kandinsky 3.0",
+      "description": "Нейросеть Сбера для генерации изображений",
+      "url": "https://fusionbrain.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "low",
+      "languages": ["ru"],
+      "sanctions": false,
+      "tags": ["генерация изображений"]
+    },
+    {
+      "name": "DeepFloyd IF",
+      "description": "Модель для генерации изображений с пониманием текста",
+      "url": "https://deepfloyd.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация изображений"]
+    },
+    {
+      "name": "Wuerstchen",
+      "description": "Эффективная модель генерации изображений",
+      "url": "https://github.com/dome272/Wuerstchen",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация изображений"]
+    },
+    {
+      "name": "LCM-LoRA",
+      "description": "Ускорение генерации изображений в 4-8 шагов",
+      "url": "https://huggingface.co/latent-consistency/lcm-lora-sdv1-5",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация изображений"]
+    },
+    {
+      "name": "SVD (Stable Video Diffusion)",
+      "description": "Генерация коротких видео из изображений",
+      "url": "https://stability.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "AnimateDiff",
+      "description": "Анимация изображений через Stable Diffusion",
+      "url": "https://animatediff.github.io",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "Kling",
+      "description": "Китайская нейросеть для генерации видео",
+      "url": "https://kling.kuaishou.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "Gen-2",
+      "description": "Генерация видео из текста и изображений от Runway",
+      "url": "https://runwayml.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "Gen-3 Alpha",
+      "description": "Новая версия Runway для генерации видео",
+      "url": "https://runwayml.com",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "Luma Dream Machine",
+      "description": "Генерация видео из текста и изображений",
+      "url": "https://lumalabs.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "Vidu",
+      "description": "Китайская нейросеть для генерации видео",
+      "url": "https://www.vidu.studio",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "NeverEnds",
+      "description": "Генерация видео из текста",
+      "url": "https://neverends.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "Moonvalley",
+      "description": "Генерация видео из текста с кинематографическим качеством",
+      "url": "https://moonvalley.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "Sora",
+      "description": "Генерация видео от OpenAI (в разработке)",
+      "url": "https://openai.com/sora",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "Veo",
+      "description": "Генерация видео от Google DeepMind",
+      "url": "https://deepmind.google/veo",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "Emu Video",
+      "description": "Генерация видео от Meta",
+      "url": "https://emu-video.metademolab.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "VGen",
+      "description": "Генерация видео от Alibaba",
+      "url": "https://vgen.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация видео"]
+    },
+    {
+      "name": "TTS (Coqui)",
+      "description": "Открытая модель синтеза речи",
+      "url": "https://coqui.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["озвучка текста"]
+    },
+    {
+      "name": "XTTS-v2",
+      "description": "Клонирование голоса и синтез речи",
+      "url": "https://huggingface.co/coqui/XTTS-v2",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["озвучка текста"]
+    },
+    {
+      "name": "Bark",
+      "description": "Генерация речи и музыки от Suno",
+      "url": "https://github.com/suno-ai/bark",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["озвучка текста", "генерация музыки"]
+    },
+    {
+      "name": "Tortoise-TTS",
+      "description": "Высококачественный синтез речи",
+      "url": "https://github.com/neonbjb/tortoise-tts",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["озвучка текста"]
+    },
+    {
+      "name": "RVC (Retrieval-based Voice Conversion)",
+      "description": "Замена голоса и клонирование",
+      "url": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["озвучка текста"]
+    },
+    {
+      "name": "So-VITS-SVC",
+      "description": "Синтез голоса с преобразованием",
+      "url": "https://github.com/svc-develop-team/so-vits-svc",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["озвучка текста"]
+    },
+    {
+      "name": "Voice.ai",
+      "description": "Изменение голоса в реальном времени",
+      "url": "https://voice.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["озвучка текста"]
+    },
+    {
+      "name": "MusicGen",
+      "description": "Генерация музыки от Meta",
+      "url": "https://audiocraft.metademolab.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация музыки"]
+    },
+    {
+      "name": "AudioLDM 2",
+      "description": "Генерация звуков и музыки из текста",
+      "url": "https://audioldm.github.io",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация музыки"]
+    },
+    {
+      "name": "MuseNet",
+      "description": "Генерация музыки от OpenAI",
+      "url": "https://openai.com/research/musenet",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация музыки"]
+    },
+    {
+      "name": "Jukebox",
+      "description": "Генерация музыки с вокалом от OpenAI",
+      "url": "https://openai.com/research/jukebox",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация музыки"]
+    },
+    {
+      "name": "Riffusion v2",
+      "description": "Генерация музыки через спектрограммы",
+      "url": "https://riffusion.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация музыки"]
+    },
+    {
+      "name": "MusicFX",
+      "description": "Генерация музыки от Google",
+      "url": "https://musicfx.withgoogle.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация музыки"]
+    },
+    {
+      "name": "SoundStorm",
+      "description": "Эффективная генерация звука от Google",
+      "url": "https://google-research.github.io/seanet/soundstorm/examples",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация музыки"]
+    },
+    {
+      "name": "VALL-E",
+      "description": "Синтез речи от Microsoft",
+      "url": "https://www.microsoft.com/en-us/research/project/vall-e/",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["озвучка текста"]
+    },
+    {
+      "name": "NaturalSpeech 3",
+      "description": "Синтез речи от Microsoft",
+      "url": "https://www.microsoft.com/en-us/research",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["озвучка текста"]
+    },
+    {
+      "name": "Stable Audio 2.0",
+      "description": "Генерация музыки и звуков от Stability AI",
+      "url": "https://stability.ai",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация музыки"]
+    },
+    {
+      "name": "ChatGLM3",
+      "description": "Китайская языковая модель от Zhipu AI",
+      "url": "https://chatglm.cn",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "ChatGLM4",
+      "description": "Новая версия ChatGLM",
+      "url": "https://chatglm.cn",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Baichuan 2",
+      "description": "Китайская языковая модель от Baichuan AI",
+      "url": "https://www.baichuan-ai.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация текста", "анализ данных"]
+    },
+    {
+      "name": "InternLM 2",
+      "description": "Китайская языковая модель от SenseTime",
+      "url": "https://internlm.intern-ai.org.cn",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Skywork",
+      "description": "Китайская языковая модель от Kunlun Tech",
+      "url": "https://skywork.tech",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "BlueLM",
+      "description": "Китайская языковая модель от VIVO",
+      "url": "https://bluelm.vivo.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Jais",
+      "description": "Арабская языковая модель от G42",
+      "url": "https://www.jais.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "BLOOM",
+      "description": "Многоязычная открытая модель",
+      "url": "https://huggingface.co/bigscience/bloom",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "анализ данных"]
+    },
+    {
+      "name": "MPT-7B",
+      "description": "Открытая модель от MosaicML",
+      "url": "https://www.mosaicml.com/mpt",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "MPT-30B",
+      "description": "Более мощная версия от MosaicML",
+      "url": "https://www.mosaicml.com/mpt",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Dbrx",
+      "description": "Модель смеси экспертов от Databricks",
+      "url": "https://www.databricks.com/dbrx",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Snowflake Arctic",
+      "description": "Модель для корпоративных задач от Snowflake",
+      "url": "https://www.snowflake.com/arctic",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "анализ данных"]
+    },
+    {
+      "name": "OLMo",
+      "description": "Открытая модель от AI2",
+      "url": "https://allenai.org/olmo",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "StripedHyena",
+      "description": "Новая архитектура модели от Together AI",
+      "url": "https://together.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Fuyu-8B",
+      "description": "Мультимодальная модель от Adept AI",
+      "url": "https://www.adept.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "анализ данных"]
+    },
+    {
+      "name": "Kosmos-2",
+      "description": "Мультимодальная модель от Microsoft",
+      "url": "https://github.com/microsoft/unilm/tree/master/kosmos-2",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "анализ данных"]
+    },
+    {
+      "name": "BLIP-2",
+      "description": "Мультимодальная модель для понимания изображений",
+      "url": "https://github.com/salesforce/LAVIS/tree/main/projects/blip2",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["анализ данных"]
+    },
+    {
+      "name": "InstructBLIP",
+      "description": "Инструктивная мультимодальная модель",
+      "url": "https://github.com/salesforce/LAVIS/tree/main/projects/instructblip",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["анализ данных", "генерация текста"]
+    },
+    {
+      "name": "LLaVA 1.6",
+      "description": "Мультимодальная модель на основе Llama",
+      "url": "https://llava-vl.github.io",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["анализ данных", "генерация текста"]
+    },
+    {
+      "name": "BakLLaVA",
+      "description": "Мультимодальная модель на основе Mistral",
+      "url": "https://github.com/SkunkworksAI/BakLLaVA",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["анализ данных", "генерация текста"]
+    },
+    {
+      "name": "Moondream",
+      "description": "Лёгкая мультимодальная модель",
+      "url": "https://moondream.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["анализ данных"]
+    },
+    {
+      "name": "Idefics2",
+      "description": "Мультимодальная модель от Hugging Face",
+      "url": "https://huggingface.co/HuggingFaceM4/idefics2-8b",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["анализ данных", "генерация текста"]
+    },
+    {
+      "name": "Otter",
+      "description": "Мультимодальная модель от UC Berkeley",
+      "url": "https://otter-llm.github.io",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["анализ данных"]
+    },
+    {
+      "name": "CogVLM",
+      "description": "Мультимодальная модель от THUDM",
+      "url": "https://github.com/THUDM/CogVLM",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["анализ данных"]
+    },
+    {
+      "name": "Qwen-VL",
+      "description": "Мультимодальная модель от Alibaba",
+      "url": "https://qwenlm.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["анализ данных"]
+    },
+    {
+      "name": "Yi-VL",
+      "description": "Мультимодальная модель от 01.AI",
+      "url": "https://yi.01.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["анализ данных"]
+    },
+    {
+      "name": "DeepSeek-VL",
+      "description": "Мультимодальная модель от DeepSeek",
+      "url": "https://chat.deepseek.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["анализ данных"]
+    },
+    {
+      "name": "Grok-1",
+      "description": "Модель от xAI Илона Маска",
+      "url": "https://x.ai",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Grok-1.5",
+      "description": "Новая версия модели от xAI",
+      "url": "https://x.ai",
+      "price_type": "paid",
+      "price_details": "Платная подписка",
+      "platforms": ["web"],
+      "has_api": false,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода", "математика"]
+    },
+    {
+      "name": "Nemotron-4 340B",
+      "description": "Мощная модель от NVIDIA",
+      "url": "https://research.nvidia.com/labs/dir/nemotron",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "написание кода", "анализ данных"]
+    },
+    {
+      "name": "Phi-3-mini",
+      "description": "Лёгкая модель от Microsoft, 3.8B параметров",
+      "url": "https://www.microsoft.com/research",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Phi-3-small",
+      "description": "Модель от Microsoft, 7B параметров",
+      "url": "https://www.microsoft.com/research",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Phi-3-medium",
+      "description": "Модель от Microsoft, 14B параметров",
+      "url": "https://www.microsoft.com/research",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "написание кода", "анализ данных"]
+    },
+    {
+      "name": "Phi-2",
+      "description": "Модель от Microsoft, 2.7B параметров",
+      "url": "https://www.microsoft.com/research",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Orca 2",
+      "description": "Модель от Microsoft для рассуждений",
+      "url": "https://www.microsoft.com/research",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "математика"]
+    },
+    {
+      "name": "WizardLM 2",
+      "description": "Модель от WizardLM для сложных инструкций",
+      "url": "https://github.com/nlpxucan/WizardLM",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Vicuna 1.5",
+      "description": "Чат-модель на основе Llama 2",
+      "url": "https://lmsys.org",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Koala",
+      "description": "Чат-модель от UC Berkeley",
+      "url": "https://bair.berkeley.edu/blog/2023/04/03/koala",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Alpaca",
+      "description": "Инструктивная модель от Stanford",
+      "url": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Dolly 2.0",
+      "description": "Открытая модель от Databricks",
+      "url": "https://www.databricks.com/blog/2023/04/12/dolly-first-open-commercially-viable-instruction-tuned-llm",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "RedPajama",
+      "description": "Открытая модель от Together AI",
+      "url": "https://www.together.ai/blog/redpajama",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "OpenOrca",
+      "description": "Модель на основе Llama с улучшенными рассуждениями",
+      "url": "https://openorca.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "математика"]
+    },
+    {
+      "name": "Nous Hermes 2",
+      "description": "Модель от Nous Research для инструкций",
+      "url": "https://nousresearch.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Dolphin 2.9",
+      "description": "Модель с открытой лицензией",
+      "url": "https://huggingface.co/cognitivecomputations/dolphin-2.9-llama3-8b",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Tulu 2",
+      "description": "Модель от AI2 для инструкций",
+      "url": "https://allenai.org/tulu",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Puffin",
+      "description": "Модель от Nous Research",
+      "url": "https://nousresearch.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Capybara",
+      "description": "Модель от Nous Research",
+      "url": "https://nousresearch.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Midnight Miqu",
+      "description": "Модель на основе Mistral",
+      "url": "https://huggingface.co/midnight-ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Bagel",
+      "description": "Модель от Nous Research",
+      "url": "https://nousresearch.com",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Yi-6B",
+      "description": "Лёгкая версия Yi от 01.AI",
+      "url": "https://yi.01.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Yi-9B",
+      "description": "Средняя версия Yi от 01.AI",
+      "url": "https://yi.01.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "zh"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Command R",
+      "description": "Модель Cohere для RAG",
+      "url": "https://cohere.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "анализ данных"]
+    },
+    {
+      "name": "Aya 23",
+      "description": "Многоязычная модель от Cohere",
+      "url": "https://cohere.com",
+      "price_type": "freemium",
+      "price_details": "Есть бесплатный тариф с ограничениями",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "Gemma 2 9B",
+      "description": "Новая версия Gemma от Google",
+      "url": "https://ai.google.dev/gemma",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Gemma 2 27B",
+      "description": "Мощная версия Gemma от Google",
+      "url": "https://ai.google.dev/gemma",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста", "написание кода", "анализ данных"]
+    },
+    {
+      "name": "RecurrentGemma",
+      "description": "Рекуррентная версия Gemma",
+      "url": "https://ai.google.dev/gemma",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["генерация текста"]
+    },
+    {
+      "name": "CodeGemma",
+      "description": "Версия Gemma для программирования",
+      "url": "https://ai.google.dev/gemma",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["написание кода"]
+    },
+    {
+      "name": "PaliGemma",
+      "description": "Мультимодальная версия Gemma",
+      "url": "https://ai.google.dev/gemma",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "medium",
+      "languages": ["ru", "en"],
+      "sanctions": true,
+      "tags": ["анализ данных"]
+    },
+    {
+      "name": "Llama 3.1 8B",
+      "description": "Новая версия Llama 3 от Meta",
+      "url": "https://meta.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "low",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода"]
+    },
+    {
+      "name": "Llama 3.1 70B",
+      "description": "Мощная версия Llama 3 от Meta",
+      "url": "https://meta.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода", "анализ данных"]
+    },
+    {
+      "name": "Llama 3.1 405B",
+      "description": "Флагманская модель Meta",
+      "url": "https://meta.ai",
+      "price_type": "free",
+      "price_details": "Полностью бесплатно",
+      "platforms": ["web"],
+      "has_api": true,
+      "complexity": "high",
+      "languages": ["ru", "en"],
+      "sanctions": false,
+      "tags": ["генерация текста", "написание кода", "анализ данных", "математика"]
+    }
+  ]
+}
