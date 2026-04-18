@@ -1,13 +1,13 @@
 {
   "name": "neuro-helper",
   "version": "1.0.0",
-  "description": "Интеллектуальный навигатор по миру нейросетей",
+  "description": "An intelligent navigator through the world of neural networks",
   "scripts": {
     "backend": "cd backend && python run.py",
     "frontend": "cd frontend && npm run dev -- --host",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
     "install-all": "cd backend && pip install -r requirements.txt && cd ../frontend && npm install"
   },
-  "author": "Владислав Василенко",
-  "license": "MIT"
+  "author": "NeuroTech™",
+  "license": "SEE LICENSE IN LICENSE.md"
 }
