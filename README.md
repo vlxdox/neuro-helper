@@ -246,12 +246,12 @@ The architecture provides for horizontal scaling:
 
 ## Authors
 
-**NeuroHelper** is created and maintained by the **Mindle™** team.
+**NeuroHelper** is created and maintained by the **Mindal™** team.
 
 For questions, collaboration inquiries, or support, please open an issue in this repository.
 
 ---
 
 <div align="center">
-  <p>Made with ❤️ by <strong>Mindle™</strong></p>
+  <p>Made with ❤️ by <strong>Mindal™</strong></p>
 </div>

@@ -8,6 +8,6 @@
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
     "install-all": "cd backend && pip install -r requirements.txt && cd ../frontend && npm install"
   },
-  "author": "Mindle™",
+  "author": "Mindal™",
   "license": "SEE LICENSE IN LICENSE.md"
 }
