@@ -107,7 +107,7 @@ For authorization to work, you need to create a project in the Google Cloud Cons
 3. In the **Authorized redirect URIs** field, add:
 - `http://localhost:8080/auth/google/callback `
 - `http://192.168.137.1.nip.io:8080/auth/google/callback`
-4. Copy **Client ID** and **Client Secret** to the `.env' file of the backend:
+4. Copy **Client ID** and **Client Secret** to the `.env` file of the backend:
 
 ```env
 VITE_GOOGLE_CLIENT_ID=your_client_id_here
