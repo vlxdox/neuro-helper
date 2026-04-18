@@ -118,7 +118,7 @@ For testing from mobile devices or other computers on the same network:
 3. Open a browser and navigate to: `http://192.168.137.1.nip.io:5173 `
 
 
-Service 'nip.io' automatically resolves the IP address to the domain name, which is necessary for Google OAuth to work correctly from external devices.
+Service `nip.io` automatically resolves the IP address to the domain name, which is necessary for Google OAuth to work correctly from external devices.
 
 > **Note:** If your server's IP address differs from the specified one, replace `192.168.137.1` with the current address. You can find it with the command `ipconfig` (Windows) or `ifconfig` (Linux/Mac).
 
