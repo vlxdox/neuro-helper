@@ -1,9 +1,9 @@
-Copyright (c) 2026 NeuroTech™. All rights reserved.
+Copyright (c) 2026 Mindle™. All rights reserved.
 
 PROPRIETARY LICENSE FOR INTERNAL USE
 
 Permission is hereby granted, free of charge, to any person who is an official
-member of the **NeuroTech™** project team (hereinafter referred to as "Team
+member of the **Mindle™** project team (hereinafter referred to as "Team
 Member"), to use, copy, modify, merge, publish, and distribute copies of this
 software and associated documentation files (hereinafter referred to as the
 "Software") exclusively for the purpose of working on the project and related
