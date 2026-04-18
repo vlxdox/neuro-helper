@@ -130,11 +130,11 @@ The server part is implemented on the asynchronous FastAPI framework, which prov
 
 - `app/main.py ` — application entry point, CORS and middleware configuration
 - `app/routers/` — API endpoint handlers
-- `auth.py ` — authentication via Google OAuth 2.0, issuing JWT tokens
-- `neural_nets.py ` — search and filtering of neural networks by tags
-- `chats.py ` — saving and retrieving query history
-- `favorites.py ` — management of selected neural networks
-- `ollama.py ` — integration with the local LLM for tag extraction
+    - `auth.py ` — authentication via Google OAuth 2.0, issuing JWT tokens
+    - `neural_nets.py ` — search and filtering of neural networks by tags
+    - `chats.py ` — saving and retrieving query history
+    - `favorites.py ` — management of selected neural networks
+    - `ollama.py ` — integration with the local LLM for tag extraction
 - `app/database/` — SQLAlchemy models and database sessions
 - `app/services/` — business logic, including JWT creation and validation
 
@@ -153,16 +153,16 @@ The client part is a single-page application with dynamic rendering and client r
 **Frontend structure:**
 
 - `src/pages/` — application pages
-- `MainPage` — main screen with search bar and mode switching
-- `ProfilePage` — personal account with usage analysis
-- `FavoritesPage` — saved neural networks 
-- `HistoryPage` — query history with pagination
+    - `MainPage` — main screen with search bar and mode switching
+    - `ProfilePage` — personal account with usage analysis
+    - `FavoritesPage` — saved neural networks 
+    - `HistoryPage` — query history with pagination
 - `src/components/` — reusable UI components
-- `NeuralCards` - neural network cards with information about price, complexity and API
-- `FilterChips` — display of selected filters
-- `Sidebar` — side navigation menu
+    - `NeuralCards` - neural network cards with information about price, complexity and API
+    - `FilterChips` — display of selected filters
+    - `Sidebar` — side navigation menu
 - `src/services/` — API interaction layer
-- `api.js ` — client for HTTP requests with automatic JWT substitution
+    - `api.js ` — client for HTTP requests with automatic JWT substitution
 - `src/context/` — React-context for theme management
 - `src/styles/` — global styles and CSS variables
 
