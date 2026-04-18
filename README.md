@@ -8,6 +8,32 @@
 
 ---
 
+## Table of Contents
+
+- [About the product](#about-the-product)
+  - [Key features](#key-features)
+- [Technology stack](#technology-stack)
+  - [Frontend dependencies](#frontend-dependencies)
+  - [Backend dependencies](#backend-dependencies)
+- [Installation and launch](#installation-and-launch)
+  - [System requirements](#system-requirements)
+  - [Step 1. Installing Ollama and the language model](#step-1-installing-ollama-and-the-language-model)
+  - [Step 2. Setting up and launching the backend](#step-2-setting-up-and-launching-the-backend)
+  - [Step 3. Setting up and launching the frontend](#step-3-setting-up-and-launching-the-frontend)
+  - [Step 4. Access to the application](#step-4-access-to-the-application)
+- [Google OAuth Configuration](#google-oauth-configuration)
+- [Product Architecture](#product-architecture)
+  - [Backend (FastAPI)](#backend-fastapi)
+  - [Frontend (React + Vite)](#frontend-react--vite)
+  - [Component interaction](#component-interaction)
+  - [Database](#database)
+  - [Security](#security)
+  - [Scalability](#scalability)
+- [Development plans](#development-plans)
+- [Authors](#authors)
+
+---
+
 ## About the product
 
 **Neuro.Helper** is a recommendation platform for quickly selecting neural network services for specific business tasks. The system analyzes the text description of the task, extracts key parameters, and offers optimal solutions based on budget, complexity, and API availability.
