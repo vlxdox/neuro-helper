@@ -10,7 +10,7 @@
 
 ## About the product
 
-** Neuro.Helper** is a recommendation platform for quickly selecting neural network services for specific business tasks. The system analyzes the text description of the task, extracts key parameters, and offers optimal solutions based on budget, complexity, and API availability.
+**Neuro.Helper** is a recommendation platform for quickly selecting neural network services for specific business tasks. The system analyzes the text description of the task, extracts key parameters, and offers optimal solutions based on budget, complexity, and API availability.
 
 ### Key features
 
@@ -94,7 +94,7 @@ For testing from mobile devices or other computers on the same network:
 
 Service "nip.io " automatically resolves the IP address to the domain name, which is necessary for Google OAuth to work correctly from external devices.
 
-> **Note:** If your server's IP address differs from the specified one, replace `192.168.137.1' with the current address. You can find it with the command `ipconfig' (Windows) or `ifconfig' (Linux/Mac).
+> **Note:** If your server's IP address differs from the specified one, replace `192.168.137.1` with the current address. You can find it with the command `ipconfig` (Windows) or `ifconfig` (Linux/Mac).
 
 ---
 
@@ -106,7 +106,7 @@ For authorization to work, you need to create a project in the Google Cloud Cons
 2. Create an **OAuth 2.0 Client ID**
 3. In the **Authorized redirect URIs** field, add:
 - `http://localhost:8080/auth/google/callback `
-   - `http://192.168.137.1.nip.io:8080/auth/google/callback`
+- `http://192.168.137.1.nip.io:8080/auth/google/callback`
 4. Copy **Client ID** and **Client Secret** to the `.env' file of the backend:
 
 ```env
@@ -120,7 +120,7 @@ After making the changes, restart the backend server.
 
 ## Product Architecture
 
-** Neuro.The Assistant** is based on a classic client-server architecture, divided into independent frontend and backend components that interact via the REST API.
+**Neuro.Helper** is based on a classic client-server architecture, divided into independent frontend and backend components that interact via the REST API.
 
 ### Backend (FastAPI)
 
@@ -133,8 +133,8 @@ The server part is implemented on the asynchronous FastAPI framework, which prov
 - `auth.py ` — authentication via Google OAuth 2.0, issuing JWT tokens
 - `neural_nets.py ` — search and filtering of neural networks by tags
 - `chats.py ` — saving and retrieving query history
-  - `favorites.py ` — management of selected neural networks
-  - `ollama.py ` — integration with the local LLM for tag extraction
+- `favorites.py ` — management of selected neural networks
+- `ollama.py ` — integration with the local LLM for tag extraction
 - `app/database/` — SQLAlchemy models and database sessions
 - `app/services/` — business logic, including JWT creation and validation
 
@@ -155,14 +155,14 @@ The client part is a single-page application with dynamic rendering and client r
 - `src/pages/` — application pages
 - `MainPage` — main screen with search bar and mode switching
 - `ProfilePage` — personal account with usage analysis
-- `FavoritesPage` — saved neural
-networks - `HistoryPage` — query history with pagination
+- `FavoritesPage` — saved neural networks 
+- `HistoryPage` — query history with pagination
 - `src/components/` — reusable UI components
 - `NeuralCards` - neural network cards with information about price, complexity and API
-- `FilterChips' — display of selected filters
-  - `Sidebar' — side navigation menu
+- `FilterChips` — display of selected filters
+- `Sidebar` — side navigation menu
 - `src/services/` — API interaction layer
-  - `api.js ` — client for HTTP requests with automatic JWT substitution
+- `api.js ` — client for HTTP requests with automatic JWT substitution
 - `src/context/` — React-context for theme management
 - `src/styles/` — global styles and CSS variables
 
