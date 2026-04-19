@@ -8,11 +8,11 @@ from pathlib import Path
 from typing import Generator
 
 
-DB_PATH = Path(__file__).parent.parent.parent.parent / "data" / "neurohelper.db" # Путь к базе данных
+DB_PATH = Path(__file__).parent.parent.parent.parent / "data" / "neurohelper.db"
 DB_URL = f"sqlite:///{DB_PATH}"
 
 
-DB_PATH.parent.mkdir(parents=True, exist_ok=True) # Создаём папку data, если её нет
+DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 engine = create_engine(
     DB_URL,

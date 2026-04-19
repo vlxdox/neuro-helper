@@ -27,18 +27,13 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 # Настройка OAuth
 GOOGLE_CLIENT_ID = os.getenv("VITE_GOOGLE_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.getenv("VITE_GOOGLE_CLIENT_SECRET", "")
-FRONTEND_URL = os.getenv("FRONTEND_URL", "http://192.168.137.1.nip.io:5173")
-BACKEND_URL = os.getenv("BACKEND_URL", "http://192.168.137.1.nip.io:8080")
 
 # Вывод информации о конфигурации при запуске
 logger.info("=" * 50)
 logger.info("🔐 GOOGLE OAuth CONFIGURATION")
 logger.info("=" * 50)
-logger.info(f"FRONTEND_URL: {FRONTEND_URL}")
-logger.info(f"BACKEND_URL: {BACKEND_URL}")
 logger.info(f"GOOGLE_CLIENT_ID: {GOOGLE_CLIENT_ID[:20]}..." if GOOGLE_CLIENT_ID else "❌ GOOGLE_CLIENT_ID не установлен")
 logger.info(f"GOOGLE_CLIENT_SECRET: {'✅ Установлен' if GOOGLE_CLIENT_SECRET else '❌ Не установлен'}")
-logger.info(f"⚠️ В Google Console должен быть указан redirect URI: {BACKEND_URL}/auth/google/callback")
 logger.info("=" * 50)
 
 config_data = {
@@ -57,12 +52,41 @@ oauth.register(
 )
 
 
+def get_backend_url(request: Request) -> str:
+    """
+    Динамически определяет URL бэкенда на основе заголовков запроса.
+    Работает с localhost, прямым IP и nip.io доменами.
+    """
+    host = request.headers.get("host", "")
+    scheme = "https" if request.url.scheme == "https" else "http"
+    return f"{scheme}://{host}"
+
+
+def get_frontend_url(request: Request) -> str:
+    """
+    По хосту бэкенда определяет URL фронтенда.
+    Бэкенд на порту 8080, фронтенд на том же хосте, но порт 5173.
+    """
+    host = request.headers.get("host", "")
+    host_without_port = host.split(":")[0]
+    scheme = "https" if request.url.scheme == "https" else "http"
+    
+    # Для localhost — стандартный порт 5173
+    if host_without_port in ["localhost", "127.0.0.1"]:
+        return f"{scheme}://localhost:5173"
+    
+    # Для внешних адресов (IP, nip.io, xip.io) — тот же хост, порт 5173
+    return f"{scheme}://{host_without_port}:5173"
+
+
 @router.get("/google/login")
 async def google_login(request: Request):
     """Перенаправляет на страницу входа Google"""
-    # ВАЖНО: Google должен отправлять callback на БЭКЕНД!
-    redirect_uri = f"{BACKEND_URL}/auth/google/callback"
+    backend_url = get_backend_url(request)
+    redirect_uri = f"{backend_url}/auth/google/callback"
+    
     logger.info(f"🔐 Начало авторизации через Google")
+    logger.info(f"   Хост запроса: {request.headers.get('host')}")
     logger.info(f"   Redirect URI (Google отправит сюда): {redirect_uri}")
     logger.info(f"   ⚠️ Убедитесь, что этот URI добавлен в Google Console")
     
@@ -76,7 +100,6 @@ async def google_callback(request: Request, db: Session = Depends(get_db)):
     logger.info(f"Request params: {dict(request.query_params)}")
     
     try:
-        # Получаем токен доступа от Google
         token = await oauth.google.authorize_access_token(request)
         user_info = token.get("userinfo")
         
@@ -94,12 +117,10 @@ async def google_callback(request: Request, db: Session = Depends(get_db)):
         logger.info(f"   - Name: {user_info.get('name')}")
         logger.info(f"   - Google ID: {user_info.get('sub')[:20]}...")
         
-        # Ищем или создаём пользователя
-        user = db.query(User).filter(User.google_id == user_info.get("sub")).first()
+        user: User = db.query(User).filter(User.google_id == user_info.get("sub")).first()
         
         if not user:
-            # Проверяем, не существует ли пользователь с таким email
-            existing_user = db.query(User).filter(User.email == email).first()
+            existing_user: User = db.query(User).filter(User.email == email).first()
             if existing_user:
                 logger.warning(f"⚠️ Пользователь с email {email} уже существует, связываем с Google")
                 setattr(existing_user, 'google_id', user_info.get("sub"))
@@ -129,12 +150,18 @@ async def google_callback(request: Request, db: Session = Depends(get_db)):
         db.commit()
         db.refresh(user)
         
+        if user.is_active is False:
+            logger.warning(f"⚠️ Попытка входа в заблокированный аккаунт: {email}")
+            frontend_url = get_frontend_url(request)
+            return RedirectResponse(url=f"{frontend_url}/auth/callback?error=account_disabled")
+        
         # Создаём JWT токен
         access_token = create_access_token(data={"sub": user.id, "email": user.email})
         logger.info(f"🔑 JWT токен создан для user_id={user.id}")
         
-        # Перенаправляем на фронтенд с токеном в URL
-        redirect_url = f"{FRONTEND_URL}/auth/callback?token={access_token}"
+        # Динамически определяем фронтенд URL
+        frontend_url = get_frontend_url(request)
+        redirect_url = f"{frontend_url}/auth/callback?token={access_token}"
         logger.info(f"➡️ Перенаправление на фронтенд: {redirect_url}")
         
         return RedirectResponse(url=redirect_url)
@@ -181,6 +208,9 @@ async def get_current_user(request: Request, db: Session = Depends(get_db)):
     
     if not user:
         raise HTTPException(status_code=404, detail="Пользователь не найден")
+    
+    if user.is_active is False:
+        raise HTTPException(status_code=403, detail="Аккаунт заблокирован или удалён")
     
     return {
         "id": user.id,

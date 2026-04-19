@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { ToastProvider, useToast } from './context/ToastContext';
 import { api, getToken, setToken } from './services/api';
 import Sidebar from './components/Sidebar';
+import CookieBanner from './components/CookieBanner';
 import MainPage from './pages/MainPage';
 import FavoritesPage from './pages/FavoritesPage';
 import HistoryPage from './pages/HistoryPage';
@@ -13,34 +15,45 @@ import './styles/global.css';
 // Компонент для обработки callback от Google
 function AuthCallback() {
   const navigate = useNavigate();
+  const toast = useToast();
   const [processed, setProcessed] = useState(false);
+  const processingRef = useRef(false);
 
   useEffect(() => {
-    // Предотвращаем двойную обработку
-    if (processed) return;
+    if (processed || processingRef.current) return;
+    processingRef.current = true;
     
     console.log("=== AuthCallback ===");
     console.log("Full URL:", window.location.href);
     
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get('token');
+    const error = urlParams.get('error');
     
     console.log("Token from URL:", token ? "получен" : "не получен");
+    console.log("Error from URL:", error || "нет");
+    
+    // Обработка ошибки блокировки аккаунта
+    if (error === 'account_disabled') {
+      toast.error('Ваш аккаунт заблокирован или удалён');
+      setProcessed(true);
+      setTimeout(() => navigate('/'), 100);
+      return;
+    }
     
     if (token) {
       console.log("Token found, saving...");
       setToken(token);
       setProcessed(true);
+      toast.success('Вы успешно вошли в аккаунт');
       
-      // Очищаем URL от токена и перенаправляем
+      // Очищаем URL от токена
       window.history.replaceState({}, document.title, window.location.pathname);
       
-      // Небольшая задержка перед перенаправлением
       setTimeout(() => {
         navigate('/');
-      }, 100);
+      }, 500);
     } else {
-      // Если нет токена и мы не на главной странице
       if (window.location.pathname === '/auth/callback' && !processed) {
         console.log("Токен не найден, перенаправление на главную");
         setProcessed(true);
@@ -49,7 +62,7 @@ function AuthCallback() {
         }, 1000);
       }
     }
-  }, [navigate, processed]);
+  }, [navigate, toast]);
 
   return (
     <div style={{
@@ -62,7 +75,7 @@ function AuthCallback() {
       gap: '20px'
     }}>
       <div className="spinner"></div>
-      <p style={{ color: 'var(--text-secondary)' }}>Вход выполняется...</p>
+      <p style={{ color: 'var(--text-secondary)' }}>Выполняется вход...</p>
     </div>
   );
 }
@@ -71,6 +84,7 @@ function AppContent() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const { isDark, toggleTheme } = useTheme();
+  const toast = useToast();
   const isMobile = windowWidth <= 768;
   const location = useLocation();
 
@@ -91,7 +105,6 @@ function AppContent() {
   // Функция для получения только имени (без фамилии)
   const getFirstName = (fullName) => {
     if (!fullName || fullName === 'Гость') return fullName;
-    // Разделяем по пробелу и берём первое слово
     const nameParts = fullName.trim().split(/\s+/);
     return nameParts[0];
   };
@@ -256,7 +269,6 @@ function AppContent() {
           e.currentTarget.style.borderColor = 'var(--border-medium)';
           e.currentTarget.style.background = 'var(--surface-secondary)';
         }}>
-          {/* Сначала имя, потом аватарка */}
           <span style={{
             color: 'var(--text-primary)',
             fontSize: fontSize,
@@ -331,8 +343,10 @@ function AppContent() {
         <Route path="/history" element={<HistoryPage user={user} />} />
         <Route path="/profile" element={<ProfilePage user={user} onLogin={handleLogin} onLogout={handleLogout} />} />
         <Route path="/auth/callback" element={<AuthCallback />} />
-        <Route path="/auth/callbback" element={<AuthCallback />} />
       </Routes>
+      
+      {/* Куки-баннер */}
+      <CookieBanner />
     </div>
   );
 }
@@ -341,7 +355,9 @@ function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
-        <AppContent />
+        <ToastProvider>
+          <AppContent />
+        </ToastProvider>
       </BrowserRouter>
     </ThemeProvider>
   );

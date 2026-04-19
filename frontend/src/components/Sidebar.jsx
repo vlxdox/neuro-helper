@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { FiHome, FiHeart, FiClock, FiSun, FiMoon } from 'react-icons/fi';
@@ -6,17 +6,34 @@ import { FiHome, FiHeart, FiClock, FiSun, FiMoon } from 'react-icons/fi';
 const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
   const { isDark, toggleTheme } = useTheme();
+  const [isClosing, setIsClosing] = useState(false);
+  const [shouldRender, setShouldRender] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
+      setShouldRender(true);
+      setIsClosing(false);
       document.body.style.overflow = 'hidden';
-    } else {
+    } else if (shouldRender) {
+      // Запускаем анимацию закрытия
+      setIsClosing(true);
       document.body.style.overflow = '';
+      
+      // Ждём окончания анимации перед удалением из DOM
+      const timer = setTimeout(() => {
+        setShouldRender(false);
+        setIsClosing(false);
+      }, 200);
+      
+      return () => clearTimeout(timer);
     }
+    
     return () => {
       document.body.style.overflow = '';
     };
-  }, [isOpen]);
+  }, [isOpen, shouldRender]);
+
+  if (!shouldRender) return null;
 
   const menuItems = [
     { path: '/', icon: <FiHome size={20} />, label: 'Главная' },
@@ -26,10 +43,29 @@ const Sidebar = ({ isOpen, onClose }) => {
 
   const isActive = (path) => location.pathname === path;
 
-  if (!isOpen) return null;
-
   return (
     <>
+      <style>
+        {`
+          @keyframes sidebarSlideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+          }
+          @keyframes sidebarSlideOut {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+          }
+          @keyframes overlayFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @keyframes overlayFadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+          }
+        `}
+      </style>
+
       {/* Оверлей */}
       <div
         onClick={onClose}
@@ -41,7 +77,8 @@ const Sidebar = ({ isOpen, onClose }) => {
           bottom: 0,
           background: 'rgba(0, 0, 0, 0.5)',
           backdropFilter: 'blur(4px)',
-          zIndex: 998
+          zIndex: 998,
+          animation: isClosing ? 'overlayFadeOut 0.2s ease-out forwards' : 'overlayFadeIn 0.2s ease-out'
         }}
       />
 
@@ -59,21 +96,8 @@ const Sidebar = ({ isOpen, onClose }) => {
         display: 'flex',
         flexDirection: 'column',
         borderRight: '1px solid var(--border-medium)',
-        animation: 'slideIn 0.2s ease-out'
+        animation: isClosing ? 'sidebarSlideOut 0.2s ease-out forwards' : 'sidebarSlideIn 0.2s ease-out'
       }}>
-        <style>
-          {`
-            @keyframes slideIn {
-              from {
-                transform: translateX(-100%);
-              }
-              to {
-                transform: translateX(0);
-              }
-            }
-          `}
-        </style>
-
         {/* Заголовок с логотипом */}
         <div style={{
           padding: '28px 20px',

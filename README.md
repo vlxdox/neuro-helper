@@ -46,6 +46,8 @@
 - **Usage Analytics** — Track activity, popular filters and statistics
 - **Temization** — light and dark design themes
 - **OAuth 2.0** — secure authorization via Google
+- **Toast notifications** — real-time feedback for user actions (login, logout, errors)
+- **Cookie consent banner** — GDPR-friendly cookie notice
 
 ---
 
@@ -185,9 +187,13 @@ The client part is a single-page application with dynamic rendering and client r
     - `NeuralCards` — neural network cards with information about price, complexity and API
     - `FilterChips` — display of selected filters
     - `Sidebar` — side navigation menu
+    - `Toast` — notification system with progress bar and pause-on-hover
+    - `CookieBanner` — GDPR-compliant cookie consent banner
 - `src/services/` — API interaction layer
     - `api.js ` — client for HTTP requests with automatic JWT substitution
-- `src/context/` — React-context for theme management
+- `src/context/` — React-context providers
+    - `ThemeContext` — light/dark theme management
+    - `ToastContext` — global notification system
 - `src/styles/` — global styles and CSS variables
 
 **Key technologies of the frontend:**
@@ -197,6 +203,7 @@ The client part is a single-page application with dynamic rendering and client r
 - React Router DOM — routing
 - Feather Icons — interface icons
 - CSS variables — dynamic theming
+- Context API — state management for theme and notifications
 
 ### Component interaction
 
@@ -206,7 +213,8 @@ The client part is a single-page application with dynamic rendering and client r
 4. The backend performs a search through the neural network database, taking into account the weights of the tags and the selected filters.
 5. The results are returned to the frontend and displayed as flashcards.
 6. The user can save the neural network to favorites — the request goes to the appropriate endpoint.
-7. Each successful search is saved in the chat history for later access
+7. Each successful search is saved in the chat history for later access.
+8. Toast notifications provide real-time feedback for some user actions like log in and log out.
 
 ### Database
 

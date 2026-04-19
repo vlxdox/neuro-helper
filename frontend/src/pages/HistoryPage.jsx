@@ -17,6 +17,8 @@ import {
   FiLink,
   FiInbox,
   FiActivity,
+  FiDollarSign,
+  FiFilter,
   FiBox
 } from 'react-icons/fi';
 
@@ -146,10 +148,10 @@ const HistoryPage = ({ user }) => {
 
   const getPriceIcon = (priceType) => {
     switch(priceType) {
-      case 'free': return <FiBox size={12} color="#10b981" />;
-      case 'freemium': return <FiBox size={12} color="#8b5cf6" />;
-      case 'paid': return <FiBox size={12} color="#f59e0b" />;
-      default: return <FiBox size={12} />;
+      case 'free': return <FiDollarSign size={12} color="#10b981" />;
+      case 'freemium': return <FiDollarSign size={12} color="#8b5cf6" />;
+      case 'paid': return <FiDollarSign size={12} color="#f59e0b" />;
+      default: return <FiDollarSign size={12} />;
     }
   };
 
@@ -640,7 +642,7 @@ const HistoryPage = ({ user }) => {
                           alignItems: 'center',
                           gap: '4px'
                         }}>
-                          <FiBox size={12} />
+                          <FiFilter size={12} />
                           <span>Фильтры:</span>
                         </span>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>

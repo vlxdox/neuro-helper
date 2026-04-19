@@ -113,7 +113,7 @@ class Chat(Base):
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     mode = Column(String(20), nullable=False)
-    query_text = Column(Text, nullable=False)  # важно: именно query_text
+    query_text = Column(Text, nullable=False)
     filters = Column(JSON, default=list)
     results = Column(JSON, default=list)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
