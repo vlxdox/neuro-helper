@@ -457,8 +457,8 @@ const MainPage = ({ user }) => {
       {/* Hero */}
       <div className="hero" style={{ marginBottom: showResults ? '32px' : '46px' }}>
         <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', justifyContent: 'center', gap: isMobile ? '0' : '16px' }}>
-          <div style={{ width: isMobile ? '48px' : '72px', height: isMobile ? '48px' : '72px', borderRadius: '16px', background: 'var(--surface-tertiary)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: !isMobile ? 'translateY(14px)' : 'translateY(0)', border: '1px solid var(--border-medium)', marginBottom: isMobile ? '5px' : '0' }}>
-            <img src="/logo.png" alt="Logo" style={{ width: isMobile ? '32px' : '52px', height: isMobile ? '32px' : '52px', borderRadius: '10px', objectFit: 'contain' }} />
+          <div style={{ width: isMobile ? '72px' : '72px', height: isMobile ? '72px' : '72px', borderRadius: '16px', background: 'var(--surface-tertiary)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: !isMobile ? 'translateY(14px)' : 'translateY(10px)', border: '1px solid var(--border-medium)', marginBottom: isMobile ? '5px' : '0' }}>
+            <img src="/logo.png" alt="Logo" style={{ width: isMobile ? '52px' : '52px', height: isMobile ? '52px' : '52px', borderRadius: '10px', objectFit: 'contain' }} />
           </div>
           <h1 className="gradient-text" style={{ marginBottom: 0, fontSize: isMobile ? '28px' : '48px', color: 'var(--accent-blue)', textAlign: 'center' }}>Нейро.Помощник</h1>
         </div>

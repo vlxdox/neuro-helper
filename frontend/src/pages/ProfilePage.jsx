@@ -389,7 +389,7 @@ const ActivityChart = memo(({ stats, isMobile, showContent }) => {
         alignItems: 'center',
         justifyContent: 'space-between',
         marginBottom: isMobile ? '16px' : '24px',
-        flexWrap: isMobile ? 'wrap' : 'nowrap',
+        flexWrap: 'nowrap',
         gap: isMobile ? '12px' : '0'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -407,7 +407,7 @@ const ActivityChart = memo(({ stats, isMobile, showContent }) => {
           </div>
           <div style={{ textAlign: 'left' }}>
             <h3 style={{
-              fontSize: '16px',
+              fontSize: isMobile ? '14px' : '16px',
               fontWeight: 600,
               color: 'var(--text-primary)',
               margin: 0,
