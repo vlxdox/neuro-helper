@@ -3,6 +3,63 @@ import { api } from '../services/api';
 import NeuralCards from '../components/NeuralCards';
 import { FiHeart, FiLock, FiArrowRight } from 'react-icons/fi';
 
+// ========== СКЕЛЕТОН КАРТОЧКИ ==========
+const NeuralCardSkeleton = () => (
+  <div style={{
+    background: 'var(--surface-secondary)',
+    borderRadius: '16px',
+    padding: '20px',
+    border: '1px solid var(--border-medium)',
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    minHeight: '280px',
+    animation: 'pulse 1.5s ease-in-out infinite'
+  }}>
+    {/* Верхняя часть: логотип + название + избранное */}
+    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+      <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'var(--surface-tertiary)' }} />
+      <div style={{ flex: 1, height: '16px', background: 'var(--surface-tertiary)', borderRadius: '8px' }} />
+      <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'var(--surface-tertiary)' }} />
+    </div>
+    
+    {/* Описание */}
+    <div style={{ marginBottom: '12px' }}>
+      <div style={{ height: '13px', background: 'var(--surface-tertiary)', borderRadius: '6px', marginBottom: '6px' }} />
+      <div style={{ height: '13px', background: 'var(--surface-tertiary)', borderRadius: '6px', marginBottom: '6px' }} />
+      <div style={{ height: '13px', background: 'var(--surface-tertiary)', borderRadius: '6px', width: '70%' }} />
+    </div>
+    
+    {/* Теги */}
+    <div style={{ display: 'flex', gap: '6px', marginBottom: '12px' }}>
+      <div style={{ width: '60px', height: '24px', background: 'var(--surface-tertiary)', borderRadius: '16px' }} />
+      <div style={{ width: '80px', height: '24px', background: 'var(--surface-tertiary)', borderRadius: '16px' }} />
+      <div style={{ width: '40px', height: '24px', background: 'var(--surface-tertiary)', borderRadius: '16px' }} />
+    </div>
+    
+    {/* Характеристики */}
+    <div style={{ marginTop: 'auto', paddingTop: '10px', borderTop: '1px solid var(--border-subtle)', display: 'flex', gap: '12px' }}>
+      <div style={{ width: '70px', height: '11px', background: 'var(--surface-tertiary)', borderRadius: '6px' }} />
+      <div style={{ width: '60px', height: '11px', background: 'var(--surface-tertiary)', borderRadius: '6px' }} />
+      <div style={{ width: '40px', height: '11px', background: 'var(--surface-tertiary)', borderRadius: '6px' }} />
+    </div>
+  </div>
+);
+
+// ========== СЕТКА СКЕЛЕТОНОВ ==========
+const NeuralCardsSkeleton = ({ count = 6 }) => (
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+    gap: '20px',
+    marginBottom: '24px'
+  }}>
+    {[...Array(count)].map((_, i) => (
+      <NeuralCardSkeleton key={i} />
+    ))}
+  </div>
+);
+
 const FavoritesPage = ({ user }) => {
   const [favorites, setFavorites] = useState([]);
   const [favoriteNets, setFavoriteNets] = useState([]);
@@ -58,6 +115,13 @@ const FavoritesPage = ({ user }) => {
 
   return (
     <div className="container" style={{ paddingTop: '80px' }}>
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+      `}</style>
+      
       {/* Hero секция */}
       <div className="hero" style={{ marginBottom: '40px' }}>
         <div style={{ 
@@ -72,7 +136,7 @@ const FavoritesPage = ({ user }) => {
             width: isMobile ? '48px' : '72px',
             height: isMobile ? '48px' : '72px',
             borderRadius: '16px',
-            background: 'linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(139, 92, 246, 0.15))',
+            background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(236, 72, 153, 0.15))',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -80,8 +144,8 @@ const FavoritesPage = ({ user }) => {
           }}>
             <FiHeart 
               size={isMobile ? 28 : 40} 
-              fill="var(--accent-blue)"
-              stroke="var(--accent-blue)"
+              fill="#ef4444"
+              stroke="#ef4444"
               strokeWidth={0}
             />
           </div>
@@ -133,8 +197,23 @@ const FavoritesPage = ({ user }) => {
           </div>
         </div>
       ) : loading ? (
-        <div className="loader">
-          <div className="spinner"></div>
+        <div className="results-section">
+          <div className="results-header" style={{ 
+            display: 'flex',
+            justifyContent: 'space-between',
+            padding: '0 0 20px 0',
+            borderBottom: '1px solid var(--border-medium)',
+            marginBottom: '20px'
+          }}>
+            <div style={{ 
+              width: '150px', 
+              height: '20px', 
+              background: 'var(--surface-tertiary)', 
+              borderRadius: '10px',
+              animation: 'pulse 1.5s ease-in-out infinite'
+            }} />
+          </div>
+          <NeuralCardsSkeleton count={favorites.length > 0 ? favorites.length : 6} />
         </div>
       ) : favoriteNets.length === 0 ? (
         <div className="empty-state">

@@ -22,6 +22,49 @@ import {
   FiBox
 } from 'react-icons/fi';
 
+// ========== СКЕЛЕТОН ЗАПРОСА ==========
+const ChatItemSkeleton = () => (
+  <div style={{
+    background: 'var(--surface-secondary)',
+    borderRadius: '20px',
+    padding: '20px',
+    border: '1px solid var(--border-medium)',
+    animation: 'pulse 1.5s ease-in-out infinite'
+  }}>
+    {/* Верхняя строка: иконка + текст + кнопки */}
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1 }}>
+        {/* Иконка режима */}
+        <div style={{ width: '44px', height: '44px', borderRadius: '14px', background: 'var(--surface-tertiary)' }} />
+        <div style={{ flex: 1 }}>
+          {/* Заголовок запроса */}
+          <div style={{ height: '20px', background: 'var(--surface-tertiary)', borderRadius: '10px', marginBottom: '10px', width: '80%' }} />
+          {/* Метки */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ width: '80px', height: '24px', background: 'var(--surface-tertiary)', borderRadius: '30px' }} />
+            <div style={{ width: '100px', height: '13px', background: 'var(--surface-tertiary)', borderRadius: '6px' }} />
+            <div style={{ width: '90px', height: '24px', background: 'var(--surface-tertiary)', borderRadius: '30px' }} />
+          </div>
+        </div>
+      </div>
+      {/* Кнопки */}
+      <div style={{ display: 'flex', gap: '8px' }}>
+        <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'var(--surface-tertiary)' }} />
+        <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'var(--surface-tertiary)' }} />
+      </div>
+    </div>
+  </div>
+);
+
+// ========== СЕТКА СКЕЛЕТОНОВ ==========
+const ChatListSkeleton = ({ count = 5 }) => (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    {[...Array(count)].map((_, i) => (
+      <ChatItemSkeleton key={i} />
+    ))}
+  </div>
+);
+
 const HistoryPage = ({ user }) => {
   const [chats, setChats] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -118,7 +161,6 @@ const HistoryPage = ({ user }) => {
 
   const getModeText = (mode) => mode === 'fast' ? 'Быстрый' : 'Умный';
 
-  // Фильтрация по поисковому запросу (только на текущей странице)
   const filteredChats = chats.filter(chat =>
     chat.query && chat.query.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -155,7 +197,6 @@ const HistoryPage = ({ user }) => {
     }
   };
 
-  // Компонент пагинации
   const Pagination = () => {
     const maxVisible = 5;
     let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
@@ -283,6 +324,13 @@ const HistoryPage = ({ user }) => {
 
   return (
     <div className="container" style={{ paddingTop: '80px' }}>
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+      `}</style>
+      
       {/* Hero секция */}
       <div className="hero" style={{ marginBottom: '40px' }}>
         <div style={{ 
@@ -415,8 +463,31 @@ const HistoryPage = ({ user }) => {
           </div>
 
           {loading ? (
-            <div className="loader">
-              <div className="spinner"></div>
+            <div className="results-section">
+              <div className="results-header" style={{ 
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '0 0 20px 0',
+                borderBottom: '1px solid var(--border-medium)',
+                marginBottom: '20px'
+              }}>
+                <div style={{ 
+                  width: '150px', 
+                  height: '20px', 
+                  background: 'var(--surface-tertiary)', 
+                  borderRadius: '10px',
+                  animation: 'pulse 1.5s ease-in-out infinite'
+                }} />
+                <div style={{ 
+                  width: '100px', 
+                  height: '13px', 
+                  background: 'var(--surface-tertiary)', 
+                  borderRadius: '6px',
+                  animation: 'pulse 1.5s ease-in-out infinite'
+                }} />
+              </div>
+              <ChatListSkeleton count={5} />
             </div>
           ) : filteredChats.length === 0 ? (
             <div className="empty-state">

@@ -20,6 +20,64 @@ import {
   FiSearch as FiSearchIcon
 } from 'react-icons/fi';
 
+const NeuralCardSkeleton = () => (
+  <div style={{
+    background: 'var(--surface-secondary)',
+    borderRadius: '16px',
+    padding: '20px',
+    border: '1px solid var(--border-medium)',
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    minHeight: '280px',
+    animation: 'pulse 1.5s ease-in-out infinite'
+  }}>
+    <style>{`@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}`}</style>
+    
+    {/* Верхняя часть: логотип + название + избранное */}
+    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+      <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'var(--surface-tertiary)' }} />
+      <div style={{ flex: 1, height: '16px', background: 'var(--surface-tertiary)', borderRadius: '8px' }} />
+      <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'var(--surface-tertiary)' }} />
+    </div>
+    
+    {/* Описание */}
+    <div style={{ marginBottom: '12px' }}>
+      <div style={{ height: '13px', background: 'var(--surface-tertiary)', borderRadius: '6px', marginBottom: '6px' }} />
+      <div style={{ height: '13px', background: 'var(--surface-tertiary)', borderRadius: '6px', marginBottom: '6px' }} />
+      <div style={{ height: '13px', background: 'var(--surface-tertiary)', borderRadius: '6px', width: '70%' }} />
+    </div>
+    
+    {/* Теги */}
+    <div style={{ display: 'flex', gap: '6px', marginBottom: '12px' }}>
+      <div style={{ width: '60px', height: '24px', background: 'var(--surface-tertiary)', borderRadius: '16px' }} />
+      <div style={{ width: '80px', height: '24px', background: 'var(--surface-tertiary)', borderRadius: '16px' }} />
+      <div style={{ width: '40px', height: '24px', background: 'var(--surface-tertiary)', borderRadius: '16px' }} />
+    </div>
+    
+    {/* Характеристики */}
+    <div style={{ marginTop: 'auto', paddingTop: '10px', borderTop: '1px solid var(--border-subtle)', display: 'flex', gap: '12px' }}>
+      <div style={{ width: '70px', height: '11px', background: 'var(--surface-tertiary)', borderRadius: '6px' }} />
+      <div style={{ width: '60px', height: '11px', background: 'var(--surface-tertiary)', borderRadius: '6px' }} />
+      <div style={{ width: '40px', height: '11px', background: 'var(--surface-tertiary)', borderRadius: '6px' }} />
+    </div>
+  </div>
+);
+
+const NeuralCardsSkeleton = ({ count = 6 }) => (
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+    gap: '20px',
+    marginBottom: '24px'
+  }}>
+    {[...Array(count)].map((_, i) => (
+      <NeuralCardSkeleton key={i} />
+    ))}
+  </div>
+);
+
+
 const MainPage = ({ user }) => {
   const [mode, setMode] = useState('fast');
   const [query, setQuery] = useState('');
@@ -1262,6 +1320,12 @@ const MainPage = ({ user }) => {
       minHeight: showResults ? 'auto' : '100vh',
       paddingTop: showResults ? '48px' : '0'
     }}>
+        <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+      `}</style>
       <div className="hero" style={{ 
         marginBottom: showResults ? '32px' : '46px',
         transition: 'margin-bottom 0.3s ease, opacity 0.4s ease, transform 0.4s ease',
@@ -1475,20 +1539,30 @@ const MainPage = ({ user }) => {
       </div>
       
       {loading && (
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '12px',
-          marginTop: '16px',
-          padding: '12px 20px',
-          background: 'rgba(96, 165, 250, 0.1)',
-          borderRadius: '40px',
-          border: '1px solid rgba(96, 165, 250, 0.2)',
-          animation: 'pulse 1.5s ease-in-out infinite'
-        }}>
-          <div className="spinner" style={{ width: '20px', height: '20px', borderWidth: '2px' }}></div>
-          <span style={{ fontSize: '14px', color: 'var(--accent-blue)' }}>Поиск нейросетей...</span>
+        <div className="results-section" style={{ marginTop: '24px' }}>
+          <div className="results-header" style={{ 
+            display: 'flex', 
+            justifyContent: 'space-between',
+            padding: '0 0 20px 0',
+            borderBottom: '1px solid var(--border-medium)',
+            marginBottom: '20px'
+          }}>
+            <div style={{ 
+              width: '150px', 
+              height: '20px', 
+              background: 'var(--surface-tertiary)', 
+              borderRadius: '10px',
+              animation: 'pulse 1.5s ease-in-out infinite'
+            }} />
+            <div style={{ 
+              width: '100px', 
+              height: '20px', 
+              background: 'var(--surface-tertiary)', 
+              borderRadius: '10px',
+              animation: 'pulse 1.5s ease-in-out infinite'
+            }} />
+          </div>
+          <NeuralCardsSkeleton count={6} />
         </div>
       )}
       
