@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { FiHeart, FiCpu, FiZap, FiBox, FiDollarSign } from 'react-icons/fi';
 
-const NeuralCards = ({ neuralNets, favorites, onToggleFavorite, isLoggedIn }) => {
+const NeuralCards = memo(({ neuralNets, favorites, onToggleFavorite, isLoggedIn }) => {
   const [visibleCount, setVisibleCount] = useState(() => Math.min(6, neuralNets.length));
   const [imageErrors, setImageErrors] = useState({});
   const hasMore = visibleCount < neuralNets.length;
@@ -375,6 +375,6 @@ const NeuralCards = ({ neuralNets, favorites, onToggleFavorite, isLoggedIn }) =>
       </div>
     </div>
   );
-};
+});
 
 export default NeuralCards;

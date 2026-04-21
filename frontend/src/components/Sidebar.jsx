@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { FiHome, FiHeart, FiClock, FiSun, FiMoon } from 'react-icons/fi';
 
-const Sidebar = ({ isOpen, onClose }) => {
+const Sidebar = memo(({ isOpen, onClose }) => {
   const location = useLocation();
   const { isDark, toggleTheme } = useTheme();
   const [isClosing, setIsClosing] = useState(false);
@@ -223,6 +223,6 @@ const Sidebar = ({ isOpen, onClose }) => {
       </div>
     </>
   );
-};
+});
 
 export default Sidebar;

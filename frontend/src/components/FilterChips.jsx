@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FiX, FiActivity } from 'react-icons/fi';
 
 const getDisplayTagName = (tag) => {
@@ -24,7 +24,7 @@ const getComplexityColor = (tag) => {
   return colorMap[tag] || 'var(--text-secondary)';
 };
 
-const FilterChips = ({ tags, onRemove }) => {
+const FilterChips = memo(({ tags, onRemove }) => {
   if (!tags || tags.length === 0) return null;
   
   return (
@@ -52,6 +52,6 @@ const FilterChips = ({ tags, onRemove }) => {
       })}
     </div>
   );
-};
+});
 
 export default FilterChips;

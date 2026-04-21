@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { FiX, FiShield } from 'react-icons/fi';
 import { useTheme } from '../context/ThemeContext';
 
-const CookieBanner = () => {
+const CookieBanner = memo(() => {
   const [isVisible, setIsVisible] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const { isDark } = useTheme();
@@ -239,6 +239,6 @@ const CookieBanner = () => {
       </div>
     </>
   );
-};
+});
 
 export default CookieBanner;
