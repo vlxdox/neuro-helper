@@ -72,7 +72,7 @@ const FavoritesPage = ({ user }) => {
             width: isMobile ? '48px' : '72px',
             height: isMobile ? '48px' : '72px',
             borderRadius: '16px',
-            background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(236, 72, 153, 0.15))',
+            background: 'linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(139, 92, 246, 0.15))',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -80,8 +80,8 @@ const FavoritesPage = ({ user }) => {
           }}>
             <FiHeart 
               size={isMobile ? 28 : 40} 
-              fill="#ef4444"
-              stroke="#ef4444"
+              fill="var(--accent-blue)"
+              stroke="var(--accent-blue)"
               strokeWidth={0}
             />
           </div>

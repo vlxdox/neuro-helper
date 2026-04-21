@@ -34,8 +34,8 @@ const MainPage = ({ user }) => {
   const [showResults, setShowResults] = useState(false);
   
   // Два разных окна фильтров
-  const [showManualFilterMenu, setShowManualFilterMenu] = useState(false);  // окно для ручных тегов (до запроса)
-  const [showResultFilterMenu, setShowResultFilterMenu] = useState(false);  // окно для фильтрации результатов (после запроса)
+  const [showManualFilterMenu, setShowManualFilterMenu] = useState(false);
+  const [showResultFilterMenu, setShowResultFilterMenu] = useState(false);
   
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
