@@ -14,6 +14,8 @@ import {
   FiChevronRight,
   FiActivity,
   FiTrendingUp,
+  FiTrendingDown,
+  FiMinus,
   FiAward,
   FiAlertCircle,
   FiRefreshCw
@@ -32,7 +34,7 @@ const styles = {
     margin: '0 auto'
   },
   header: (isMobile) => ({
-    background: 'linear-gradient(135deg, var(--surface-secondary) 0%, var(--surface-tertiary) 100%)',
+    background: 'var(--surface-secondary)',
     borderRadius: '24px',
     border: '1px solid var(--border-medium)',
     padding: isMobile ? '20px' : '32px',
@@ -171,12 +173,13 @@ const ErrorComponent = memo(({ message, onRetry }) => (
         width: '80px',
         height: '80px',
         borderRadius: '24px',
-        background: 'rgba(239, 68, 68, 0.1)',
+        background: 'rgba(224, 96, 96, 0.1)',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        border: '1px solid var(--accent-red)'
       }}>
-        <FiAlertCircle size={40} color="#ef4444" />
+        <FiAlertCircle size={40} color="var(--accent-red)" />
       </div>
       <h3 style={{
         fontSize: '20px',
@@ -198,7 +201,7 @@ const ErrorComponent = memo(({ message, onRetry }) => (
         style={{
           marginTop: '16px',
           padding: '12px 24px',
-          background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-purple))',
+          background: 'var(--accent-blue)',
           border: 'none',
           borderRadius: '12px',
           fontSize: '14px',
@@ -221,89 +224,154 @@ const ErrorComponent = memo(({ message, onRetry }) => (
 ));
 
 // ========== STAT CARD ==========
-const StatCard = memo(({ icon: Icon, label, value, color = 'var(--accent-blue)', subtitle, delay = 0, showContent }) => (
-  <div style={{
-    background: 'var(--surface-tertiary)',
-    borderRadius: '20px',
-    padding: '20px',
-    border: '1px solid var(--border-subtle)',
-    position: 'relative',
-    overflow: 'hidden',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
-    opacity: showContent ? 1 : 0,
-    transform: showContent ? 'translateY(0) scale(1)' : 'translateY(25px) scale(0.95)',
-    transition: `opacity 0.45s cubic-bezier(0.2, 0.9, 0.4, 1) ${delay}ms, transform 0.55s cubic-bezier(0.2, 0.9, 0.4, 1) ${delay}ms`,
-    willChange: 'opacity, transform'
-  }}>
+const StatCard = memo(({ icon: Icon, label, value, color = 'var(--accent-blue)', subtitle, delay = 0, showContent }) => {
+  // Определяем RGB-значения на основе переданного цвета
+  const getColorRgb = () => {
+    if (color.includes('blue')) return '90, 156, 255';
+    if (color.includes('green')) return '74, 201, 154';
+    if (color.includes('red')) return '224, 96, 96';
+    if (color.includes('purple')) return '154, 140, 255';
+    if (color.includes('yellow')) return '212, 184, 74';
+    if (color.includes('orange')) return '212, 138, 90';
+    if (color.includes('pink')) return '212, 122, 154';
+    if (color.includes('cyan')) return '74, 212, 212';
+    return '90, 156, 255'; // по умолчанию blue
+  };
+  
+  const colorRgb = getColorRgb();
+  
+  return (
     <div style={{
-      position: 'absolute',
-      top: '-60px',
-      left: '0',
-      right: '0',
-      width: '100%',
-      height: '180px',
-      background: `radial-gradient(ellipse at 50% 0%, ${color}25 0%, ${color}10 40%, transparent 70%)`,
-      pointerEvents: 'none'
-    }} />
-    
-    <div style={{
-      width: '48px',
-      height: '48px',
-      borderRadius: '16px',
-      background: `${color}15`,
+      background: 'var(--surface-tertiary)',
+      borderRadius: '20px',
+      padding: '20px',
+      border: '1px solid var(--border-subtle)',
+      position: 'relative',
+      overflow: 'hidden',
       display: 'flex',
+      flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: '16px',
-      position: 'relative',
-      zIndex: 1
+      textAlign: 'center',
+      opacity: showContent ? 1 : 0,
+      transform: showContent ? 'translateY(0) scale(1)' : 'translateY(25px) scale(0.95)',
+      transition: `opacity 0.45s cubic-bezier(0.2, 0.9, 0.4, 1) ${delay}ms, transform 0.55s cubic-bezier(0.2, 0.9, 0.4, 1) ${delay}ms`,
+      willChange: 'opacity, transform'
     }}>
-      <Icon size={24} color={color} />
-    </div>
-    
-    <div style={{
-      fontSize: '32px',
-      fontWeight: 700,
-      color: 'var(--text-primary)',
-      lineHeight: 1.2,
-      marginBottom: '4px',
-      position: 'relative',
-      zIndex: 1
-    }}>
-      {value}
-    </div>
-    <div style={{
-      fontSize: '13px',
-      color: 'var(--text-tertiary)',
-      fontWeight: 500,
-      marginBottom: subtitle ? '8px' : '0',
-      position: 'relative',
-      zIndex: 1
-    }}>
-      {label}
-    </div>
-    {subtitle && (
+      {/* Декоративный градиент сверху */}
       <div style={{
-        fontSize: '11px',
-        color: 'var(--text-tertiary)',
-        opacity: 0.7,
+        position: 'absolute',
+        top: '-60px',
+        left: '0',
+        right: '0',
+        width: '100%',
+        height: '180px',
+        background: `radial-gradient(ellipse at 50% 0%, rgba(${colorRgb}, 0.15) 0%, rgba(${colorRgb}, 0.05) 40%, transparent 70%)`,
+        pointerEvents: 'none'
+      }} />
+      
+      {/* Иконка с фоном */}
+      <div style={{
+        width: '56px',
+        height: '56px',
+        borderRadius: '18px',
+        background: `rgba(${colorRgb}, 0.15)`,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: '16px',
+        position: 'relative',
+        zIndex: 1,
+        border: `1.5px solid rgba(${colorRgb}, 0.4)`,
+        boxShadow: `0 4px 12px rgba(${colorRgb}, 0.2)`
+      }}>
+        <Icon size={28} color={color} />
+      </div>
+      
+      <div style={{
+        fontSize: '32px',
+        fontWeight: 700,
+        color: 'var(--text-primary)',
+        lineHeight: 1.2,
+        marginBottom: '4px',
         position: 'relative',
         zIndex: 1
       }}>
-        {subtitle}
+        {value}
       </div>
-    )}
-  </div>
-));
+      <div style={{
+        fontSize: '13px',
+        color: 'var(--text-tertiary)',
+        fontWeight: 500,
+        marginBottom: subtitle ? '8px' : '0',
+        position: 'relative',
+        zIndex: 1
+      }}>
+        {label}
+      </div>
+      {subtitle && (
+        <div style={{
+          fontSize: '11px',
+          color: 'var(--text-tertiary)',
+          opacity: 0.7,
+          position: 'relative',
+          zIndex: 1
+        }}>
+          {subtitle}
+        </div>
+      )}
+    </div>
+  );
+});
 
+// ========== ACTIVITY CHART ==========
 // ========== ACTIVITY CHART ==========
 const ActivityChart = memo(({ stats, isMobile, showContent }) => {
   const maxCount = Math.max(...stats.weeklyActivity.map(d => d.count), 1);
   const todayIndex = (new Date().getDay() + 6) % 7;
   const totalThisWeek = stats.weeklyActivity.reduce((sum, d) => sum + d.count, 0);
+  
+  // Вычисляем разницу с прошлой неделей
+  const thisWeekCount = stats.weeklyActivity.reduce((sum, d) => sum + d.count, 0);
+  const lastWeekCount = stats.lastWeekActivity ? stats.lastWeekActivity.reduce((sum, d) => sum + d.count, 0) : 0;
+  const trend = thisWeekCount - lastWeekCount;
+  
+  const getTrendInfo = () => {
+    if (trend > 0) return { 
+      icon: FiTrendingUp, 
+      color: 'var(--accent-green)', 
+      colorRgb: '74, 201, 154',
+      text: `+${trend}` 
+    };
+    if (trend < 0) return { 
+      icon: FiTrendingDown, 
+      color: 'var(--accent-red)', 
+      colorRgb: '224, 96, 96',
+      text: `${trend}` 
+    };
+    return { 
+      icon: FiMinus, 
+      color: 'var(--text-tertiary)', 
+      colorRgb: '122, 122, 122',
+      text: '0' 
+    };
+  };
+  
+  const trendInfo = getTrendInfo();
+  const TrendIcon = trendInfo.icon;
+  
+  // Отдельный state для анимации столбцов
+  const [isAnimating, setIsAnimating] = useState(false);
+  
+  useEffect(() => {
+    if (showContent) {
+      const timer = setTimeout(() => {
+        setIsAnimating(true);
+      }, 50);
+      return () => clearTimeout(timer);
+    } else {
+      setIsAnimating(false);
+    }
+  }, [showContent]);
   
   return (
     <div style={{
@@ -329,12 +397,13 @@ const ActivityChart = memo(({ stats, isMobile, showContent }) => {
             width: '40px',
             height: '40px',
             borderRadius: '14px',
-            background: 'rgba(139, 92, 246, 0.15)',
+            background: 'rgba(154, 140, 255, 0.1)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            border: '1px solid var(--accent-purple)'
           }}>
-            <FiActivity size={20} color="#8b5cf6" />
+            <FiActivity size={20} color="var(--accent-purple)" />
           </div>
           <div style={{ textAlign: 'left' }}>
             <h3 style={{
@@ -356,17 +425,29 @@ const ActivityChart = memo(({ stats, isMobile, showContent }) => {
           </div>
         </div>
         
+        {/* Индикатор разницы с фоном */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
           gap: '6px',
           padding: '6px 12px',
-          background: 'rgba(139, 92, 246, 0.1)',
-          borderRadius: '20px'
+          background: `rgba(${trendInfo.colorRgb}, 0.15)`,
+          borderRadius: '20px',
+          border: `1px solid rgba(${trendInfo.colorRgb}, 0.4)`
         }}>
-          <FiTrendingUp size={14} color="#8b5cf6" />
-          <span style={{ fontSize: '12px', color: '#8b5cf6', fontWeight: 500 }}>
-            {totalThisWeek > 0 ? '+' + totalThisWeek : '0'}
+          <div style={{
+            width: '24px',
+            height: '24px',
+            borderRadius: '8px',
+            background: `rgba(${trendInfo.colorRgb}, 0.2)`,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <TrendIcon size={14} color={trendInfo.color} />
+          </div>
+          <span style={{ fontSize: '12px', color: trendInfo.color, fontWeight: 500 }}>
+            {trendInfo.text}
           </span>
         </div>
       </div>
@@ -423,7 +504,7 @@ const ActivityChart = memo(({ stats, isMobile, showContent }) => {
                     <span style={{
                       fontSize: '10px',
                       fontWeight: 600,
-                      color: isToday ? '#8b5cf6' : 'var(--text-secondary)',
+                      color: isToday ? 'var(--accent-purple)' : 'var(--text-secondary)',
                       marginBottom: '4px'
                     }}>
                       {day.count}
@@ -439,16 +520,16 @@ const ActivityChart = memo(({ stats, isMobile, showContent }) => {
                   }}>
                     <div style={{
                       width: isMobile ? '28px' : '44px',
-                      height: `${Math.max(heightPercent, 2)}%`,
+                      height: isAnimating ? `${Math.max(heightPercent, 2)}%` : '4px',
                       minHeight: '4px',
                       background: isToday 
-                        ? 'linear-gradient(180deg, #8b5cf6 0%, #7c3aed 100%)'
+                        ? 'var(--accent-purple)'
                         : day.count > 0
-                          ? 'linear-gradient(180deg, #64748b 0%, #475569 100%)'
-                          : 'var(--surface-tertiary)',
+                          ? 'var(--text-tertiary)'
+                          : 'var(--surface-secondary)',
                       borderRadius: '8px 8px 4px 4px',
-                      transition: 'height 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                      boxShadow: isToday && day.count > 0 ? '0 4px 12px rgba(139, 92, 246, 0.3)' : 'none',
+                      transition: isAnimating ? 'height 0.5s cubic-bezier(0.2, 0.9, 0.4, 1)' : 'none',
+                      boxShadow: isToday && day.count > 0 ? '0 4px 12px rgba(154, 140, 255, 0.2)' : 'none',
                       border: day.count === 0 ? '1px solid var(--border-subtle)' : 'none'
                     }} />
                   </div>
@@ -458,7 +539,7 @@ const ActivityChart = memo(({ stats, isMobile, showContent }) => {
                   <div style={{
                     fontSize: isMobile ? '10px' : '12px',
                     fontWeight: isToday ? 600 : 500,
-                    color: isToday ? '#8b5cf6' : 'var(--text-secondary)'
+                    color: isToday ? 'var(--accent-purple)' : 'var(--text-secondary)'
                   }}>
                     {day.day}
                   </div>
@@ -501,12 +582,13 @@ const PopularTags = memo(({ stats, isMobile, showContent, getTagDisplayName }) =
           width: '40px',
           height: '40px',
           borderRadius: '14px',
-          background: 'rgba(59, 130, 246, 0.15)',
+          background: 'rgba(90, 156, 255, 0.1)',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          border: '1px solid var(--accent-blue)'
         }}>
-          <FiTag size={20} color="#3b82f6" />
+          <FiTag size={20} color="var(--accent-blue)" />
         </div>
         <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>
           Популярные фильтры
@@ -520,11 +602,12 @@ const PopularTags = memo(({ stats, isMobile, showContent, getTagDisplayName }) =
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <span style={{
                   width: '24px', height: '24px', borderRadius: '8px',
-                  background: idx === 0 ? 'rgba(251, 191, 36, 0.2)' : idx === 1 ? 'rgba(156, 163, 175, 0.2)' : idx === 2 ? 'rgba(180, 83, 9, 0.2)' : 'rgba(100, 116, 139, 0.1)',
+                  background: idx === 0 ? 'rgba(212, 184, 74, 0.15)' : idx === 1 ? 'rgba(156, 163, 175, 0.15)' : idx === 2 ? 'rgba(212, 138, 90, 0.15)' : 'rgba(100, 116, 139, 0.1)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: '12px', fontWeight: 600,
-                  color: idx === 0 ? '#fbbf24' : idx === 1 ? '#9ca3af' : idx === 2 ? '#b45309' : 'var(--text-tertiary)',
-                  flexShrink: 0
+                  color: idx === 0 ? 'var(--accent-yellow)' : idx === 1 ? 'var(--text-tertiary)' : idx === 2 ? 'var(--accent-orange)' : 'var(--text-tertiary)',
+                  flexShrink: 0,
+                  border: '1px solid var(--border-subtle)'
                 }}>
                   {idx + 1}
                 </span>
@@ -537,18 +620,17 @@ const PopularTags = memo(({ stats, isMobile, showContent, getTagDisplayName }) =
               </span>
             </div>
             
-            {/* Полоска прогресса с анимацией слева направо */}
             <div style={{
               width: '100%', 
               height: '6px',
-              background: 'linear-gradient(90deg, transparent 0%, var(--surface-secondary) 100%)',
+              background: 'var(--surface-secondary)',
               borderRadius: '3px', 
               overflow: 'hidden'
             }}>
               <div style={{
                 width: showContent ? `${(item.count / stats.popularTags[0].count) * 100}%` : '0%',
                 height: '100%',
-                background: 'linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.5) 50%, #8b5cf6 100%)',
+                background: 'var(--accent-purple)',
                 borderRadius: '3px',
                 transition: showContent ? `width 0.6s cubic-bezier(0.2, 0.9, 0.4, 1) ${280 + idx * 25}ms` : 'none',
                 willChange: 'width'
@@ -587,10 +669,11 @@ const RecentActivity = memo(({ stats, isMobile, showContent, formatTimeAgo, navi
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <div style={{
             width: '40px', height: '40px', borderRadius: '14px',
-            background: 'rgba(16, 185, 129, 0.15)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center'
+            background: 'rgba(74, 201, 154, 0.1)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            border: '1px solid var(--accent-green)'
           }}>
-            <FiClock size={20} color="#10b981" />
+            <FiClock size={20} color="var(--accent-green)" />
           </div>
           <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>
             Недавние запросы
@@ -600,13 +683,28 @@ const RecentActivity = memo(({ stats, isMobile, showContent, formatTimeAgo, navi
         <button
           onClick={() => navigate('/history')}
           style={{
-            background: 'none', border: 'none', color: 'var(--accent-blue)',
-            fontSize: '13px', cursor: 'pointer', display: 'flex',
-            alignItems: 'center', gap: '4px', padding: '6px 12px',
-            borderRadius: '20px', transition: 'all 0.2s'
+            background: 'var(--surface-secondary)',
+            border: '1px solid var(--border-medium)',
+            color: 'var(--accent-blue)',
+            fontSize: '13px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px',
+            padding: '6px 12px',
+            borderRadius: '20px',
+            transition: 'all 0.2s'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(59, 130, 246, 0.1)'}
-          onMouseLeave={(e) => e.currentTarget.style.background = 'none'}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = 'var(--accent-blue)';
+            e.currentTarget.style.color = 'white';
+            e.currentTarget.style.borderColor = 'var(--accent-blue)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'var(--surface-secondary)';
+            e.currentTarget.style.color = 'var(--accent-blue)';
+            e.currentTarget.style.borderColor = 'var(--border-medium)';
+          }}
         >
           Все <FiChevronRight size={14} />
         </button>
@@ -625,7 +723,7 @@ const RecentActivity = memo(({ stats, isMobile, showContent, formatTimeAgo, navi
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1, minWidth: 0 }}>
               <div style={{
                 width: '8px', height: '8px', borderRadius: '50%',
-                background: activity.mode === 'fast' ? '#3b82f6' : '#8b5cf6',
+                background: activity.mode === 'fast' ? 'var(--accent-blue)' : 'var(--accent-purple)',
                 flexShrink: 0
               }} />
               <span style={{
@@ -640,7 +738,8 @@ const RecentActivity = memo(({ stats, isMobile, showContent, formatTimeAgo, navi
             <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '8px' : '16px', flexShrink: 0 }}>
               <span style={{
                 fontSize: '11px', color: 'var(--text-tertiary)',
-                background: 'var(--surface-secondary)', padding: '4px 8px', borderRadius: '12px'
+                background: 'var(--surface-secondary)', padding: '4px 8px', borderRadius: '12px',
+                border: '1px solid var(--border-subtle)'
               }}>
                 {activity.resultsCount} рез.
               </span>
@@ -666,6 +765,7 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
     userChatsCount: 0,
     userFavoritesCount: 0,
     weeklyActivity: [],
+    lastWeekActivity: [],
     popularTags: [],
     recentActivity: []
   });
@@ -700,7 +800,8 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
         userFavorites = await api.getFavorites();
       }
       
-      const activity = generateWeeklyActivity(userChats);
+      const activity = generateWeeklyActivity(userChats, 0);
+      const lastWeekActivity = generateWeeklyActivity(userChats, -7);
       const popularTags = generatePopularTags(userChats);
       const recentActivity = generateRecentActivity(userChats);
       
@@ -710,6 +811,7 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
         userChatsCount: userChats.length,
         userFavoritesCount: userFavorites.length,
         weeklyActivity: activity,
+        lastWeekActivity: lastWeekActivity,
         popularTags,
         recentActivity
       });
@@ -732,17 +834,22 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
     loadStats();
   }, [loadStats]);
 
-  const generateWeeklyActivity = (chats) => {
+  const generateWeeklyActivity = (chats, weekOffset = 0) => {
     const days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
     const today = new Date();
     const todayLocal = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    const dayOfWeek = todayLocal.getDay();
     
-    let mondayDate = new Date(todayLocal);
+    // Смещаем на weekOffset недель
+    const targetDate = new Date(todayLocal);
+    targetDate.setDate(todayLocal.getDate() + weekOffset);
+    
+    const dayOfWeek = targetDate.getDay();
+    
+    let mondayDate = new Date(targetDate);
     if (dayOfWeek === 0) {
-      mondayDate.setDate(todayLocal.getDate() - 6);
+      mondayDate.setDate(targetDate.getDate() - 6);
     } else {
-      mondayDate.setDate(todayLocal.getDate() - (dayOfWeek - 1));
+      mondayDate.setDate(targetDate.getDate() - (dayOfWeek - 1));
     }
     
     return days.map((day, i) => {
@@ -754,9 +861,13 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
       
       const count = chats.filter(chat => {
         if (!chat.created_at) return false;
-        const chatDate = new Date(chat.created_at);
-        const chatDateLocal = new Date(chatDate.getFullYear(), chatDate.getMonth(), chatDate.getDate());
-        return chatDateLocal >= startOfDay && chatDateLocal < endOfDay;
+        
+        const utcDate = new Date(chat.created_at);
+        const offset = new Date().getTimezoneOffset();
+        const localDate = new Date(utcDate.getTime() - (offset * 60 * 1000));
+        
+        const localDateOnly = new Date(localDate.getFullYear(), localDate.getMonth(), localDate.getDate());
+        return localDateOnly >= startOfDay && localDateOnly < endOfDay;
       }).length;
       
       return { day, date: currentDate, count };
@@ -778,11 +889,11 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
     
     if (sortedTags.length === 0) {
       return [
-        { tag: 'free', count: 12 },
-        { tag: 'генерация текста', count: 8 },
-        { tag: 'has_api', count: 6 },
-        { tag: 'low', count: 5 },
-        { tag: 'генерация изображений', count: 4 }
+        { tag: 'free', count: 0 },
+        { tag: 'генерация текста', count: 0 },
+        { tag: 'has_api', count: 0 },
+        { tag: 'low', count: 0 },
+        { tag: 'генерация изображений', count: 0 }
       ];
     }
     
@@ -847,7 +958,6 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
     return (
       <div style={styles.loadingContainer(isMobile)}>
         <div style={styles.contentWrapper}>
-          {/* Header Skeleton */}
           <div style={{
             ...styles.header(isMobile),
             background: 'var(--surface-tertiary)',
@@ -862,18 +972,15 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
             </div>
           </div>
           
-          {/* Stats Grid Skeletons */}
           <div style={styles.statsGrid(isMobile)}>
             {[...Array(4)].map((_, i) => <StatCardSkeleton key={i} />)}
           </div>
           
-          {/* Charts Skeletons */}
           <div style={styles.chartsGrid(isMobile)}>
             <ChartSkeleton isMobile={isMobile} />
             <ChartSkeleton isMobile={isMobile} />
           </div>
           
-          {/* Recent Activity Skeleton */}
           <RecentActivitySkeleton isMobile={isMobile} />
         </div>
       </div>
@@ -882,6 +989,12 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
 
   return (
     <div style={styles.container(isMobile)}>
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+      `}</style>
       <div style={styles.contentWrapper}>
         {/* Profile Header */}
         <div style={{ ...styles.header(isMobile), opacity: showContent ? 1 : 0 }}>
@@ -903,12 +1016,12 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
                 height: isMobile ? '80px' : '100px',
                 borderRadius: '28px',
                 background: user.isLoggedIn 
-                  ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+                  ? 'var(--accent-blue)'
                   : 'var(--surface-tertiary)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+                boxShadow: 'var(--shadow-md)',
                 border: '3px solid var(--surface-secondary)'
               }}>
                 {user.avatar ? (
@@ -922,7 +1035,7 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
                   <span style={{
                     fontSize: isMobile ? '36px' : '48px',
                     fontWeight: 600,
-                    color: user.isLoggedIn ? 'white' : 'var(--text-primary)'
+                    color: 'white'
                   }}>
                     {user.isLoggedIn ? user.name?.charAt(0).toUpperCase() : <FiUser size={48} style={{ transform: 'translateY(6px)' }} />}
                   </span>
@@ -954,15 +1067,16 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
                 {user.isLoggedIn && (
                   <span style={{
                     padding: '4px 12px',
-                    background: 'rgba(16, 185, 129, 0.15)',
+                    background: 'rgba(74, 201, 154, 0.1)',
                     borderRadius: '20px',
                     fontSize: '11px',
                     fontWeight: 600,
-                    color: '#10b981',
+                    color: 'var(--accent-green)',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '4px',
-                    whiteSpace: 'nowrap'
+                    whiteSpace: 'nowrap',
+                    border: '1px solid var(--accent-green)'
                   }}>
                     <FiAward size={12} />
                     Активный пользователь
@@ -1015,8 +1129,8 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       gap: '8px', flex: 1
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(239, 68, 68, 0.1)'; e.currentTarget.style.borderColor = '#ef4444'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--surface-secondary)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
+                    onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent-red)'; e.currentTarget.style.color = 'white'; e.currentTarget.style.borderColor = 'var(--accent-red)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--surface-secondary)'; e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
                       <FiHeart size={14} /> Избранное
                     </button>
                     
@@ -1028,8 +1142,8 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       gap: '8px', flex: 1
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(59, 130, 246, 0.1)'; e.currentTarget.style.borderColor = '#3b82f6'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--surface-secondary)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
+                    onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent-blue)'; e.currentTarget.style.color = 'white'; e.currentTarget.style.borderColor = 'var(--accent-blue)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--surface-secondary)'; e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
                       <FiClock size={14} /> История
                     </button>
                   </div>
@@ -1038,11 +1152,11 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
                     padding: '10px 20px', background: 'transparent',
                     border: '1px solid var(--border-medium)', borderRadius: '12px',
                     fontSize: '13px', fontWeight: 500, cursor: 'pointer',
-                    color: '#ef4444', display: 'flex', alignItems: 'center',
+                    color: 'var(--accent-red)', display: 'flex', alignItems: 'center',
                     justifyContent: 'center', gap: '8px', transition: 'all 0.2s',
                     width: isMobile ? '100%' : 'auto'
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(239, 68, 68, 0.1)'; e.currentTarget.style.borderColor = '#ef4444'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(224, 96, 96, 0.1)'; e.currentTarget.style.borderColor = 'var(--accent-red)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
                     <FiLogOut size={14} /> Выйти
                   </button>
@@ -1056,8 +1170,8 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   gap: '8px', width: '100%'
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(59, 130, 246, 0.1)'; e.currentTarget.style.borderColor = '#3b82f6'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--surface-secondary)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent-blue)'; e.currentTarget.style.color = 'white'; e.currentTarget.style.borderColor = 'var(--accent-blue)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--surface-secondary)'; e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
                   <FcGoogle size={18} />
                   <span>Войти через Google</span>
                 </button>
@@ -1068,17 +1182,17 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
 
         {/* Stats Grid - 4 cards */}
         <div style={styles.statsGrid(isMobile)}>
-          <StatCard icon={FiDatabase} label="Нейросетей в базе" value={stats.totalNets || 300} color="#3b82f6" subtitle="+15 за неделю" delay={0} showContent={showContent} />
-          <StatCard icon={FiTag} label="Уникальных тегов" value={stats.totalTags || 50} color="#10b981" subtitle="Категории и фильтры" delay={40} showContent={showContent} />
+          <StatCard icon={FiDatabase} label="Нейросетей в базе" value={stats.totalNets || 300} color="var(--accent-blue)" subtitle="+15 за неделю" delay={0} showContent={showContent} />
+          <StatCard icon={FiTag} label="Уникальных тегов" value={stats.totalTags || 50} color="var(--accent-green)" subtitle="Категории и фильтры" delay={40} showContent={showContent} />
           {user.isLoggedIn ? (
             <>
-              <StatCard icon={FiHeart} label="В избранном" value={stats.userFavoritesCount} color="#ef4444" subtitle="Сохранённых моделей" delay={80} showContent={showContent} />
-              <StatCard icon={FiSearch} label="Всего запросов" value={stats.userChatsCount} color="#8b5cf6" subtitle="За всё время" delay={120} showContent={showContent} />
+              <StatCard icon={FiHeart} label="В избранном" value={stats.userFavoritesCount} color="var(--accent-red)" subtitle="Сохранённых моделей" delay={80} showContent={showContent} />
+              <StatCard icon={FiSearch} label="Всего запросов" value={stats.userChatsCount} color="var(--accent-purple)" subtitle="За всё время" delay={120} showContent={showContent} />
             </>
           ) : (
             <>
-              <StatCard icon={FiHeart} label="В избранном" value="—" color="#ef4444" subtitle="Войдите для просмотра" delay={80} showContent={showContent} />
-              <StatCard icon={FiSearch} label="Всего запросов" value="—" color="#8b5cf6" subtitle="Войдите для просмотра" delay={120} showContent={showContent} />
+              <StatCard icon={FiHeart} label="В избранном" value="—" color="var(--accent-red)" subtitle="Войдите для просмотра" delay={80} showContent={showContent} />
+              <StatCard icon={FiSearch} label="Всего запросов" value="—" color="var(--accent-purple)" subtitle="Войдите для просмотра" delay={120} showContent={showContent} />
             </>
           )}
         </div>
@@ -1102,10 +1216,11 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
           }}>
             <div style={{
               width: '64px', height: '64px', borderRadius: '20px',
-              background: 'rgba(139, 92, 246, 0.1)', display: 'flex',
-              alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px'
+              background: 'rgba(154, 140, 255, 0.1)', display: 'flex',
+              alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px',
+              border: '1px solid var(--accent-purple)'
             }}>
-              <FiActivity size={32} color="#8b5cf6" opacity={0.7} />
+              <FiActivity size={32} color="var(--accent-purple)" opacity={0.7} />
             </div>
             <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', margin: '0 0 8px 0' }}>
               Войдите в аккаунт

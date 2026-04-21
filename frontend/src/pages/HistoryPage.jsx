@@ -266,7 +266,7 @@ const HistoryPage = ({ user }) => {
             style={{
               padding: '8px 14px',
               background: currentPage === page 
-                ? 'linear-gradient(135deg, var(--accent-blue), var(--accent-purple))'
+                ? 'var(--accent-blue)'
                 : 'var(--surface-tertiary)',
               border: '1px solid var(--border-medium)',
               borderRadius: '8px',
@@ -345,11 +345,12 @@ const HistoryPage = ({ user }) => {
             width: isMobile ? '48px' : '72px',
             height: isMobile ? '48px' : '72px',
             borderRadius: '16px',
-            background: 'linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(139, 92, 246, 0.15))',
+            background: 'var(--surface-tertiary)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            transform: isMobile ? 'translateY(8px)' : 'translateY(20px)'
+            transform: isMobile ? 'translateY(8px)' : 'translateY(20px)',
+            border: '1px solid var(--border-medium)'
           }}>
             <FiClock size={isMobile ? 28 : 40} color="var(--accent-blue)" />
           </div>
@@ -449,7 +450,7 @@ const HistoryPage = ({ user }) => {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.color = 'var(--accent-blue)';
-                    e.currentTarget.style.background = 'rgba(96, 165, 250, 0.15)';
+                    e.currentTarget.style.background = 'var(--surface-secondary)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = 'var(--text-tertiary)';
@@ -507,16 +508,19 @@ const HistoryPage = ({ user }) => {
                   marginTop: '16px',
                   padding: '8px 20px',
                   borderRadius: '30px',
-                  background: 'rgba(96, 165, 250, 0.15)',
+                  background: 'var(--surface-tertiary)',
+                  border: '1px solid var(--border-medium)',
                   transition: 'all 0.2s'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, var(--accent-blue), var(--accent-purple))';
+                  e.currentTarget.style.background = 'var(--accent-blue)';
                   e.currentTarget.style.color = 'white';
+                  e.currentTarget.style.borderColor = 'var(--accent-blue)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(96, 165, 250, 0.15)';
+                  e.currentTarget.style.background = 'var(--surface-tertiary)';
                   e.currentTarget.style.color = 'var(--accent-blue)';
+                  e.currentTarget.style.borderColor = 'var(--border-medium)';
                 }}>
                   <FiChevronRight size={16} />
                   <span>Сделать первый запрос</span>
@@ -581,12 +585,13 @@ const HistoryPage = ({ user }) => {
                           height: '44px',
                           borderRadius: '14px',
                           background: chat.mode === 'fast' 
-                            ? 'linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(96, 165, 250, 0.1))'
-                            : 'linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.1))',
+                            ? 'rgba(90, 156, 255, 0.15)'
+                            : 'rgba(154, 140, 255, 0.15)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          color: chat.mode === 'fast' ? 'var(--accent-blue)' : 'var(--accent-purple)'
+                          color: chat.mode === 'fast' ? 'var(--accent-blue)' : 'var(--accent-purple)',
+                          border: '1px solid var(--border-medium)'
                         }}>
                           {getModeIcon(chat.mode)}
                         </div>
@@ -612,8 +617,8 @@ const HistoryPage = ({ user }) => {
                               padding: '4px 12px', 
                               borderRadius: '30px',
                               background: chat.mode === 'fast' 
-                                ? 'rgba(96, 165, 250, 0.15)'
-                                : 'rgba(139, 92, 246, 0.15)',
+                                ? 'rgba(90, 156, 255, 0.15)'
+                                : 'rgba(154, 140, 255, 0.15)',
                               color: chat.mode === 'fast' ? 'var(--accent-blue)' : 'var(--accent-purple)',
                               fontWeight: 500
                             }}>
@@ -628,7 +633,8 @@ const HistoryPage = ({ user }) => {
                                 color: 'var(--text-tertiary)',
                                 background: 'var(--surface-tertiary)',
                                 padding: '4px 10px',
-                                borderRadius: '30px'
+                                borderRadius: '30px',
+                                border: '1px solid var(--border-subtle)'
                               }}>
                                 {chat.results.length} результатов
                               </span>
@@ -644,8 +650,8 @@ const HistoryPage = ({ user }) => {
                             setExpandedChat(expandedChat === chat.id ? null : chat.id);
                           }}
                           style={{
-                            background: 'none',
-                            border: 'none',
+                            background: 'var(--surface-tertiary)',
+                            border: '1px solid var(--border-medium)',
                             cursor: 'pointer',
                             color: 'var(--text-tertiary)',
                             padding: '8px',
@@ -656,10 +662,14 @@ const HistoryPage = ({ user }) => {
                             justifyContent: 'center'
                           }}
                           onMouseEnter={(e) => {
-                            e.currentTarget.style.background = 'var(--surface-tertiary)';
+                            e.currentTarget.style.background = 'var(--surface-secondary)';
+                            e.currentTarget.style.color = 'var(--text-primary)';
+                            e.currentTarget.style.borderColor = 'var(--accent-blue)';
                           }}
                           onMouseLeave={(e) => {
-                            e.currentTarget.style.background = 'transparent';
+                            e.currentTarget.style.background = 'var(--surface-tertiary)';
+                            e.currentTarget.style.color = 'var(--text-tertiary)';
+                            e.currentTarget.style.borderColor = 'var(--border-medium)';
                           }}
                         >
                           {expandedChat === chat.id ? <FiChevronUp size={18} /> : <FiChevronDown size={18} />}
@@ -670,8 +680,8 @@ const HistoryPage = ({ user }) => {
                             handleDeleteChat(chat.id);
                           }}
                           style={{
-                            background: 'none',
-                            border: 'none',
+                            background: 'var(--surface-tertiary)',
+                            border: '1px solid var(--border-medium)',
                             cursor: 'pointer',
                             color: 'var(--text-tertiary)',
                             padding: '8px',
@@ -683,11 +693,13 @@ const HistoryPage = ({ user }) => {
                           }}
                           onMouseEnter={(e) => {
                             e.currentTarget.style.color = 'var(--accent-red)';
-                            e.currentTarget.style.background = 'rgba(239, 68, 68, 0.1)';
+                            e.currentTarget.style.background = 'rgba(224, 96, 96, 0.1)';
+                            e.currentTarget.style.borderColor = 'var(--accent-red)';
                           }}
                           onMouseLeave={(e) => {
                             e.currentTarget.style.color = 'var(--text-tertiary)';
-                            e.currentTarget.style.background = 'transparent';
+                            e.currentTarget.style.background = 'var(--surface-tertiary)';
+                            e.currentTarget.style.borderColor = 'var(--border-medium)';
                           }}
                         >
                           <FiTrash2 size={16} />
@@ -728,7 +740,8 @@ const HistoryPage = ({ user }) => {
                                 color: 'var(--text-secondary)',
                                 display: 'flex',
                                 alignItems: 'center',
-                                gap: '4px'
+                                gap: '4px',
+                                border: '1px solid var(--border-subtle)'
                               }}>
                                 {isComplexity && (
                                   <FiActivity size={10} color={getComplexityColor(filter)} />
@@ -771,13 +784,16 @@ const HistoryPage = ({ user }) => {
                               alignItems: 'center',
                               flexWrap: 'wrap',
                               gap: '10px',
-                              transition: 'all 0.2s'
+                              transition: 'all 0.2s',
+                              border: '1px solid var(--border-subtle)'
                             }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.background = 'rgba(96, 165, 250, 0.15)';
+                              e.currentTarget.style.background = 'var(--surface-secondary)';
+                              e.currentTarget.style.borderColor = 'var(--accent-blue)';
                             }}
                             onMouseLeave={(e) => {
                               e.currentTarget.style.background = 'var(--surface-tertiary)';
+                              e.currentTarget.style.borderColor = 'var(--border-subtle)';
                             }}>
                               <a 
                                 href={net.url} 
@@ -812,7 +828,8 @@ const HistoryPage = ({ user }) => {
                               textAlign: 'center',
                               padding: '10px',
                               background: 'var(--surface-tertiary)',
-                              borderRadius: '14px'
+                              borderRadius: '14px',
+                              border: '1px solid var(--border-subtle)'
                             }}>
                               + ещё {chat.results.length - 5} нейросетей
                             </div>

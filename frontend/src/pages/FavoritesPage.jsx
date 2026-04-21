@@ -136,16 +136,17 @@ const FavoritesPage = ({ user }) => {
             width: isMobile ? '48px' : '72px',
             height: isMobile ? '48px' : '72px',
             borderRadius: '16px',
-            background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(236, 72, 153, 0.15))',
+            background: 'var(--surface-tertiary)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            transform: isMobile ? 'translateY(8px)' : 'translateY(20px)'
+            transform: isMobile ? 'translateY(8px)' : 'translateY(20px)',
+            border: '1px solid var(--border-medium)'
           }}>
             <FiHeart 
               size={isMobile ? 28 : 40} 
-              fill="#ef4444"
-              stroke="#ef4444"
+              fill="var(--accent-red)"
+              stroke="var(--accent-red)"
               strokeWidth={0}
             />
           </div>
@@ -213,7 +214,7 @@ const FavoritesPage = ({ user }) => {
               animation: 'pulse 1.5s ease-in-out infinite'
             }} />
           </div>
-          <NeuralCardsSkeleton count={favorites.length > 0 ? favorites.length : 6} />
+          <NeuralCardsSkeleton count={6} />
         </div>
       ) : favoriteNets.length === 0 ? (
         <div className="empty-state">
@@ -236,16 +237,19 @@ const FavoritesPage = ({ user }) => {
             marginTop: '16px',
             padding: '8px 20px',
             borderRadius: '30px',
-            background: 'rgba(96, 165, 250, 0.15)',
+            background: 'var(--surface-tertiary)',
+            border: '1px solid var(--border-medium)',
             transition: 'all 0.2s'
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'linear-gradient(135deg, var(--accent-blue), var(--accent-purple))';
+            e.currentTarget.style.background = 'var(--accent-blue)';
             e.currentTarget.style.color = 'white';
+            e.currentTarget.style.borderColor = 'var(--accent-blue)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'rgba(96, 165, 250, 0.15)';
+            e.currentTarget.style.background = 'var(--surface-tertiary)';
             e.currentTarget.style.color = 'var(--accent-blue)';
+            e.currentTarget.style.borderColor = 'var(--border-medium)';
           }}>
             <FiArrowRight size={16} />
             <span>Перейти на главную</span>

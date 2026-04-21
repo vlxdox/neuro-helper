@@ -1,38 +1,38 @@
 :root {
-  /* Основные поверхности - четкая градация */
-  --surface-primary: rgba(17, 24, 39, 0.95);
-  --surface-secondary: rgba(31, 41, 55, 0.85);
-  --surface-tertiary: rgba(55, 65, 81, 0.7);
-  --surface-glass: rgba(255, 255, 255, 0.05);
+  /* Нейтральная тёмная гамма */
+  --surface-primary: #121212;
+  --surface-secondary: #1E1E1E;
+  --surface-tertiary: #2A2A2A;
+  --surface-glass: rgba(255, 255, 255, 0.03);
   
-  /* Текст - четкая иерархия */
-  --text-primary: #F9FAFB;
-  --text-secondary: #D1D5DB;
-  --text-tertiary: #9CA3AF;
-  --text-muted: #6B7280;
+  /* Текст */
+  --text-primary: #EDEDED;
+  --text-secondary: #B0B0B0;
+  --text-tertiary: #7A7A7A;
+  --text-muted: #5A5A5A;
   
-  /* Акцентные цвета - синергетическая палитра */
-  --accent-blue: #60A5FA;
-  --accent-blue-dark: #3B82F6;
-  --accent-purple: #A78BFA;
-  --accent-purple-dark: #8B5CF6;
-  --accent-cyan: #22D3EE;
-  --accent-pink: #F472B6;
-  --accent-green: #34D399;
-  --accent-yellow: #FBBF24;
-  --accent-orange: #FB923C;
-  --accent-red: #F87171;
+  /* Акцентные цвета — приглушённые, не кричащие */
+  --accent-blue: #5A9CFF;
+  --accent-blue-dark: #3A7BD5;
+  --accent-purple: #9A8CFF;
+  --accent-purple-dark: #7A6CD5;
+  --accent-cyan: #4AD4D4;
+  --accent-pink: #D47A9A;
+  --accent-green: #4AC99A;
+  --accent-yellow: #D4B84A;
+  --accent-orange: #D48A5A;
+  --accent-red: #E06060;
   
-  /* Границы и разделители */
-  --border-subtle: rgba(75, 85, 99, 0.3);
-  --border-medium: rgba(96, 165, 250, 0.25);
-  --border-strong: rgba(96, 165, 250, 0.5);
+  /* Границы */
+  --border-subtle: rgba(100, 100, 100, 0.3);
+  --border-medium: rgba(130, 130, 130, 0.4);
+  --border-strong: rgba(160, 160, 160, 0.6);
   
   /* Тени */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 20px rgba(96, 165, 250, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(90, 156, 255, 0.2);
 }
 
 @font-face {
@@ -75,7 +75,6 @@
   font-display: swap;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -84,7 +83,7 @@
 
 body {
   font-family: 'Montserrat', 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
-  background: radial-gradient(circle at 20% 30%, #0A0F1A 0%, #020408 100%);
+  background: var(--surface-primary);
   color: var(--text-primary);
   line-height: 1.5;
   min-height: 100vh;
@@ -96,7 +95,7 @@ input, button, textarea, select, a, p, h1, h2, h3, h4, h5, h6, span, div {
   font-family: 'Montserrat', 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Анимированный фон с улучшенными цветами */
+/* Фон без ярких градиентов */
 body::before {
   content: '';
   position: fixed;
@@ -105,9 +104,8 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(34, 211, 238, 0.08) 0%, transparent 50%);
+    radial-gradient(circle at 80% 20%, rgba(90, 156, 255, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(154, 140, 255, 0.04) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
@@ -156,7 +154,7 @@ body::before {
 .hero h1 {
   font-size: 56px;
   font-weight: 700;
-  background: linear-gradient(135deg, #F9FAFB 0%, var(--accent-blue) 40%, var(--accent-purple) 70%, var(--accent-cyan) 100%);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-blue) 50%, var(--accent-purple) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -222,9 +220,8 @@ body::before {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-medium);
   background: var(--surface-tertiary);
-  backdrop-filter: blur(4px);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -238,13 +235,12 @@ body::before {
 .round-btn:hover {
   background: var(--surface-secondary);
   border-color: var(--accent-blue);
-  transform: scale(1.02);
   color: var(--text-primary);
 }
 
 .round-btn.filter-btn {
-  background: rgba(96, 165, 250, 0.15);
-  border-color: rgba(96, 165, 250, 0.3);
+  background: var(--surface-tertiary);
+  border-color: var(--border-medium);
   color: var(--accent-blue);
 }
 
@@ -255,15 +251,13 @@ body::before {
 }
 
 .round-btn.primary {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  background: var(--accent-blue);
   color: white;
-  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
   border: none;
 }
 
 .round-btn.primary:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.4);
+  background: var(--accent-blue-dark);
 }
 
 /* ========== ПЕРЕКЛЮЧАТЕЛЬ РЕЖИМОВ ========== */
@@ -280,7 +274,6 @@ body::before {
   border-radius: 40px;
   border: 1px solid var(--border-medium);
   background: var(--surface-tertiary);
-  backdrop-filter: blur(4px);
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
@@ -290,14 +283,14 @@ body::before {
 }
 
 .mode-btn.active {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-  border-color: transparent;
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
   color: white;
   box-shadow: var(--shadow-sm);
 }
 
 .mode-btn:not(.active):hover {
-  background: rgba(96, 165, 250, 0.2);
+  background: var(--surface-secondary);
   border-color: var(--accent-blue);
   color: var(--text-primary);
 }
@@ -316,7 +309,6 @@ body::before {
   gap: 8px;
   padding: 8px 16px;
   background: var(--surface-tertiary);
-  backdrop-filter: blur(4px);
   border-radius: 40px;
   font-size: 13px;
   font-weight: 500;
@@ -423,7 +415,7 @@ body::before {
 .assistant-option:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
-  background: rgba(96, 165, 250, 0.15);
+  background: var(--surface-secondary);
   border-color: var(--accent-blue);
   color: var(--text-primary);
 }
@@ -438,7 +430,7 @@ body::before {
 .spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(96, 165, 250, 0.2);
+  border: 3px solid rgba(90, 156, 255, 0.2);
   border-top-color: var(--accent-blue);
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
@@ -479,12 +471,12 @@ body::before {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  background: var(--border-strong);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+  background: var(--accent-blue);
 }
 
 /* ========== АДАПТИВНОСТЬ ========== */
@@ -524,50 +516,49 @@ body::before {
 
 /* ========== СВЕТЛАЯ ТЕМА ========== */
 body.light-theme {
-  --surface-primary: rgba(255, 255, 255, 0.95);
-  --surface-secondary: rgba(248, 250, 252, 0.9);
-  --surface-tertiary: rgba(241, 245, 249, 0.85);
+  --surface-primary: #FAFAFA;
+  --surface-secondary: #FFFFFF;
+  --surface-tertiary: #F0F0F0;
   --surface-glass: rgba(0, 0, 0, 0.02);
   
-  --text-primary: #0F172A;
-  --text-secondary: #334155;
-  --text-tertiary: #64748B;
-  --text-muted: #94A3B8;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-tertiary: #7A7A7A;
+  --text-muted: #A0A0A0;
   
-  --accent-blue: #3B82F6;
-  --accent-blue-dark: #2563EB;
-  --accent-purple: #8B5CF6;
-  --accent-purple-dark: #7C3AED;
-  --accent-cyan: #06B6D4;
-  --accent-pink: #EC4899;
-  --accent-green: #10B981;
-  --accent-yellow: #F59E0B;
-  --accent-orange: #F97316;
-  --accent-red: #EF4444;
+  --accent-blue: #3A7BD5;
+  --accent-blue-dark: #2A6AC5;
+  --accent-purple: #7A6CD5;
+  --accent-purple-dark: #6A5CC5;
+  --accent-cyan: #3AB4B4;
+  --accent-pink: #C46A8A;
+  --accent-green: #3AB98A;
+  --accent-yellow: #C4A83A;
+  --accent-orange: #C47A4A;
+  --accent-red: #D05050;
   
-  --border-subtle: rgba(148, 163, 184, 0.2);
-  --border-medium: rgba(59, 130, 246, 0.25);
-  --border-strong: rgba(59, 130, 246, 0.5);
+  --border-subtle: rgba(150, 150, 150, 0.2);
+  --border-medium: rgba(120, 120, 120, 0.3);
+  --border-strong: rgba(90, 90, 90, 0.5);
   
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
-  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.2);
+  --shadow-glow: 0 0 20px rgba(58, 123, 213, 0.15);
 }
 
 body.light-theme {
-  background: radial-gradient(circle at 20% 30%, #F8FAFC 0%, #EFF6FF 100%);
+  background: var(--surface-primary);
 }
 
 body.light-theme::before {
   background: 
-    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
+    radial-gradient(circle at 80% 20%, rgba(58, 123, 213, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(122, 108, 213, 0.03) 0%, transparent 50%);
 }
 
 body.light-theme .hero h1 {
-  background: linear-gradient(135deg, #0F172A 0%, var(--accent-blue) 40%, var(--accent-purple) 70%, var(--accent-cyan) 100%);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-blue) 50%, var(--accent-purple) 100%);
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -586,19 +577,19 @@ body.light-theme .input-field::placeholder {
 }
 
 body.light-theme .round-btn {
-  background: white;
+  background: var(--surface-tertiary);
   border-color: var(--border-subtle);
   color: var(--text-secondary);
 }
 
 body.light-theme .round-btn:hover {
-  background: var(--surface-tertiary);
+  background: var(--surface-secondary);
   border-color: var(--accent-blue);
   color: var(--accent-blue);
 }
 
 body.light-theme .round-btn.filter-btn {
-  background: rgba(59, 130, 246, 0.1);
+  background: var(--surface-tertiary);
   color: var(--accent-blue);
 }
 
@@ -607,36 +598,45 @@ body.light-theme .round-btn.filter-btn:hover {
   color: white;
 }
 
+body.light-theme .round-btn.primary {
+  background: var(--accent-blue);
+  color: white;
+}
+
+body.light-theme .round-btn.primary:hover {
+  background: var(--accent-blue-dark);
+}
+
 body.light-theme .mode-btn {
-  background: white;
+  background: var(--surface-tertiary);
   border-color: var(--border-medium);
   color: var(--text-secondary);
 }
 
 body.light-theme .mode-btn.active {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  background: var(--accent-blue);
   color: white;
 }
 
 body.light-theme .mode-btn:not(.active):hover {
-  background: rgba(59, 130, 246, 0.1);
+  background: var(--surface-secondary);
   border-color: var(--accent-blue);
   color: var(--accent-blue);
 }
 
 body.light-theme .chip {
-  background: white;
+  background: var(--surface-tertiary);
   color: var(--accent-blue);
   border-color: var(--border-medium);
 }
 
 body.light-theme .chip:hover {
   border-color: var(--accent-blue);
-  background: rgba(59, 130, 246, 0.05);
+  background: var(--surface-secondary);
 }
 
 body.light-theme .assistant-card {
-  background: white;
+  background: var(--surface-secondary);
   border-color: var(--border-medium);
 }
 
@@ -656,7 +656,7 @@ body.light-theme .assistant-option {
 }
 
 body.light-theme .assistant-option:hover {
-  background: rgba(59, 130, 246, 0.1);
+  background: var(--surface-secondary);
   border-color: var(--accent-blue);
   color: var(--accent-blue);
 }
@@ -670,7 +670,7 @@ body.light-theme .empty-state-text {
 }
 
 body.light-theme .spinner {
-  border-color: rgba(59, 130, 246, 0.2);
+  border-color: rgba(58, 123, 213, 0.2);
   border-top-color: var(--accent-blue);
 }
 
@@ -768,7 +768,6 @@ body.light-theme .spinner {
   transform: scale(0.96);
 }
 
-/* Анимация для переключателя режимов */
 .mode-btn {
   transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1) !important;
 }
@@ -777,11 +776,10 @@ body.light-theme .spinner {
   transform: scale(0.96) !important;
 }
 
-/* Слайдер для переключателя */
 .mode-slider {
   position: absolute;
   top: 4px;
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  background: var(--accent-blue);
   border-radius: 32px;
   transition: left 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   pointer-events: none;
