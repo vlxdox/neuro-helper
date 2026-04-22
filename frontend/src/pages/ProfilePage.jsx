@@ -95,7 +95,7 @@ const styles = {
 };
 
 // ========== СКЕЛЕТОНЫ ==========
-const StatCardSkeleton = memo(() => (
+const StatCardSkeleton = memo(({ isMobile }) => (
   <div style={{
     background: 'var(--surface-tertiary)',
     borderRadius: '20px',
@@ -104,12 +104,70 @@ const StatCardSkeleton = memo(() => (
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    animation: 'pulse 1.5s ease-in-out infinite'
+    textAlign: 'center',
+    position: 'relative',
+    overflow: 'hidden',
+    animation: 'pulse 1.5s ease-in-out infinite',
+    minHeight: isMobile ? '140px' : '160px'
   }}>
     <style>{`@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}`}</style>
-    <div style={{ width: '48px', height: '48px', borderRadius: '16px', background: 'var(--surface-secondary)', marginBottom: '16px' }} />
-    <div style={{ width: '60px', height: '32px', background: 'var(--surface-secondary)', borderRadius: '8px', marginBottom: '4px' }} />
-    <div style={{ width: '100px', height: '13px', background: 'var(--surface-secondary)', borderRadius: '6px' }} />
+    
+    {/* Декоративный градиент сверху - такой же как в StatCard */}
+    <div style={{
+      position: 'absolute',
+      top: '-60px',
+      left: '0',
+      right: '0',
+      width: '100%',
+      height: '180px',
+      background: 'radial-gradient(ellipse at 50% 0%, rgba(90, 156, 255, 0.15) 0%, rgba(90, 156, 255, 0.05) 40%, transparent 70%)',
+      pointerEvents: 'none'
+    }} />
+    
+    {/* Иконка с фоном - точные размеры как в StatCard */}
+    <div style={{
+      width: '56px',
+      height: '56px',
+      borderRadius: '18px',
+      background: 'rgba(90, 156, 255, 0.15)',
+      marginBottom: '16px',
+      position: 'relative',
+      zIndex: 1,
+      border: '1.5px solid rgba(90, 156, 255, 0.4)',
+      boxShadow: '0 4px 12px rgba(90, 156, 255, 0.2)'
+    }} />
+    
+    {/* Значение - 32px шрифт */}
+    <div style={{
+      width: isMobile ? '60px' : '80px',
+      height: '32px',
+      background: 'var(--surface-secondary)',
+      borderRadius: '8px',
+      marginBottom: '4px',
+      position: 'relative',
+      zIndex: 1
+    }} />
+    
+    {/* Лейбл - 13px шрифт */}
+    <div style={{
+      width: isMobile ? '100px' : '120px',
+      height: '13px',
+      background: 'var(--surface-secondary)',
+      borderRadius: '6px',
+      marginBottom: '8px',
+      position: 'relative',
+      zIndex: 1
+    }} />
+    
+    {/* Сабтайтл - 11px шрифт */}
+    <div style={{
+      width: isMobile ? '80px' : '100px',
+      height: '11px',
+      background: 'var(--surface-secondary)',
+      borderRadius: '6px',
+      position: 'relative',
+      zIndex: 1
+    }} />
   </div>
 ));
 
@@ -119,20 +177,246 @@ const ChartSkeleton = memo(({ isMobile }) => (
     borderRadius: '20px',
     padding: isMobile ? '16px' : '24px',
     border: '1px solid var(--border-subtle)',
-    animation: 'pulse 1.5s ease-in-out infinite'
+    animation: 'pulse 1.5s ease-in-out infinite',
+    minHeight: isMobile ? '240px' : '280px'
   }}>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-      <div style={{ width: '40px', height: '40px', borderRadius: '14px', background: 'var(--surface-secondary)' }} />
-      <div>
-        <div style={{ width: '160px', height: '16px', background: 'var(--surface-secondary)', borderRadius: '8px', marginBottom: '4px' }} />
-        <div style={{ width: '120px', height: '13px', background: 'var(--surface-secondary)', borderRadius: '6px' }} />
+    {/* Заголовок с иконкой - как в ActivityChart */}
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: isMobile ? '16px' : '24px',
+      flexWrap: 'nowrap',
+      gap: isMobile ? '12px' : '0'
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{
+          width: '40px',
+          height: '40px',
+          borderRadius: '14px',
+          background: 'rgba(154, 140, 255, 0.1)',
+          border: '1px solid var(--accent-purple)'
+        }} />
+        <div>
+          <div style={{
+            width: isMobile ? '140px' : '160px',
+            height: isMobile ? '14px' : '16px',
+            background: 'var(--surface-secondary)',
+            borderRadius: '8px',
+            marginBottom: '4px'
+          }} />
+          <div style={{
+            width: isMobile ? '100px' : '120px',
+            height: '13px',
+            background: 'var(--surface-secondary)',
+            borderRadius: '6px'
+          }} />
+        </div>
+      </div>
+      
+      {/* Индикатор тренда */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '6px',
+        padding: '6px 12px',
+        background: 'rgba(74, 201, 154, 0.15)',
+        borderRadius: '20px',
+        border: '1px solid rgba(74, 201, 154, 0.4)'
+      }}>
+        <div style={{
+          width: '24px',
+          height: '24px',
+          borderRadius: '8px',
+          background: 'rgba(74, 201, 154, 0.2)'
+        }} />
+        <div style={{
+          width: '20px',
+          height: '12px',
+          background: 'var(--surface-secondary)',
+          borderRadius: '6px'
+        }} />
       </div>
     </div>
-    <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-around', gap: '12px', paddingTop: '8px' }}>
-      {[...Array(7)].map((_, i) => (
-        <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <div style={{ width: '100%', height: isMobile ? '60px' : '100px', background: 'var(--surface-secondary)', borderRadius: '8px' }} />
-          <div style={{ width: '24px', height: '10px', background: 'var(--surface-secondary)', borderRadius: '4px' }} />
+    
+    {/* График с колонками - как в ActivityChart */}
+    <div style={{ position: 'relative' }}>
+      {/* Линии сетки */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        pointerEvents: 'none'
+      }}>
+        {[0, 1, 2, 3].map(i => (
+          <div key={i} style={{
+            height: '1px',
+            background: 'var(--border-subtle)',
+            opacity: 0.5
+          }} />
+        ))}
+      </div>
+      
+      {/* Колонки */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'flex-end',
+        justifyContent: 'space-around',
+        gap: isMobile ? '4px' : '12px',
+        paddingTop: '8px'
+      }}>
+        {[...Array(7)].map((_, i) => {
+          const heights = isMobile ? [60, 40, 80, 50, 70, 45, 30] : [80, 60, 100, 70, 90, 65, 50];
+          
+          return (
+            <div key={i} style={{
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '8px',
+              maxWidth: isMobile ? '35px' : '60px'
+            }}>
+              <div style={{
+                position: 'relative',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}>
+                {/* Значение над колонкой */}
+                <div style={{
+                  width: '20px',
+                  height: '10px',
+                  background: 'var(--surface-secondary)',
+                  borderRadius: '4px',
+                  marginBottom: '4px'
+                }} />
+                
+                <div style={{
+                  width: '100%',
+                  height: isMobile ? '100px' : '140px',
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  justifyContent: 'center'
+                }}>
+                  <div style={{
+                    width: isMobile ? '28px' : '44px',
+                    height: `${heights[i]}%`,
+                    minHeight: '4px',
+                    background: 'var(--surface-secondary)',
+                    borderRadius: '8px 8px 4px 4px',
+                    border: '1px solid var(--border-subtle)'
+                  }} />
+                </div>
+              </div>
+              
+              {/* День недели */}
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: isMobile ? '20px' : '24px',
+                  height: isMobile ? '10px' : '12px',
+                  background: 'var(--surface-secondary)',
+                  borderRadius: '6px',
+                  margin: '0 auto'
+                }} />
+                {!isMobile && (
+                  <div style={{
+                    width: '16px',
+                    height: '9px',
+                    background: 'var(--surface-secondary)',
+                    borderRadius: '4px',
+                    margin: '2px auto 0'
+                  }} />
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+));
+
+const PopularTagsSkeleton = memo(({ isMobile }) => (
+  <div style={{
+    background: 'var(--surface-tertiary)',
+    borderRadius: '20px',
+    padding: isMobile ? '16px' : '24px',
+    border: '1px solid var(--border-subtle)',
+    animation: 'pulse 1.5s ease-in-out infinite',
+    minHeight: isMobile ? '240px' : '280px'
+  }}>
+    {/* Заголовок */}
+    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+      <div style={{
+        width: '40px',
+        height: '40px',
+        borderRadius: '14px',
+        background: 'rgba(90, 156, 255, 0.1)',
+        border: '1px solid var(--accent-blue)'
+      }} />
+      <div style={{
+        width: isMobile ? '140px' : '160px',
+        height: '16px',
+        background: 'var(--surface-secondary)',
+        borderRadius: '8px'
+      }} />
+    </div>
+    
+    {/* Список тегов */}
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      {[...Array(5)].map((_, idx) => (
+        <div key={idx}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginBottom: '6px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <div style={{
+                width: '24px',
+                height: '24px',
+                borderRadius: '8px',
+                background: 'var(--surface-secondary)',
+                border: '1px solid var(--border-subtle)'
+              }} />
+              <div style={{
+                width: isMobile ? '100px' : '120px',
+                height: '14px',
+                background: 'var(--surface-secondary)',
+                borderRadius: '6px'
+              }} />
+            </div>
+            <div style={{
+              width: '30px',
+              height: '13px',
+              background: 'var(--surface-secondary)',
+              borderRadius: '6px'
+            }} />
+          </div>
+          
+          {/* Прогресс-бар */}
+          <div style={{
+            width: '100%',
+            height: '6px',
+            background: 'var(--surface-secondary)',
+            borderRadius: '3px',
+            overflow: 'hidden'
+          }}>
+            <div style={{
+              width: `${100 - idx * 15}%`,
+              height: '100%',
+              background: 'rgba(154, 140, 255, 0.3)',
+              borderRadius: '3px'
+            }} />
+          </div>
         </div>
       ))}
     </div>
@@ -147,21 +431,93 @@ const RecentActivitySkeleton = memo(({ isMobile }) => (
     border: '1px solid var(--border-subtle)',
     animation: 'pulse 1.5s ease-in-out infinite'
   }}>
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+    {/* Заголовок с кнопкой */}
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: '20px',
+      flexWrap: isMobile ? 'wrap' : 'nowrap',
+      gap: isMobile ? '12px' : '0'
+    }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-        <div style={{ width: '40px', height: '40px', borderRadius: '14px', background: 'var(--surface-secondary)' }} />
-        <div style={{ width: '140px', height: '16px', background: 'var(--surface-secondary)', borderRadius: '8px' }} />
+        <div style={{
+          width: '40px',
+          height: '40px',
+          borderRadius: '14px',
+          background: 'rgba(74, 201, 154, 0.1)',
+          border: '1px solid var(--accent-green)'
+        }} />
+        <div style={{
+          width: isMobile ? '120px' : '140px',
+          height: '16px',
+          background: 'var(--surface-secondary)',
+          borderRadius: '8px'
+        }} />
       </div>
+      
+      {/* Кнопка "Все" */}
+      <div style={{
+        width: '70px',
+        height: '32px',
+        background: 'var(--surface-secondary)',
+        borderRadius: '20px',
+        border: '1px solid var(--border-medium)'
+      }} />
     </div>
-    {[...Array(3)].map((_, i) => (
-      <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px', marginBottom: '8px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1 }}>
-          <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--surface-secondary)' }} />
-          <div style={{ flex: 1, height: '13px', background: 'var(--surface-secondary)', borderRadius: '6px' }} />
+    
+    {/* Список активностей */}
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+      {[...Array(3)].map((_, i) => (
+        <div key={i} style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '12px',
+          borderRadius: '12px',
+          flexWrap: isMobile ? 'wrap' : 'nowrap',
+          gap: isMobile ? '8px' : '0'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1, minWidth: 0 }}>
+            <div style={{
+              width: '8px',
+              height: '8px',
+              borderRadius: '50%',
+              background: 'var(--surface-secondary)',
+              flexShrink: 0
+            }} />
+            <div style={{
+              flex: 1,
+              height: '13px',
+              maxWidth: isMobile ? '150px' : '200px',
+              background: 'var(--surface-secondary)',
+              borderRadius: '6px'
+            }} />
+          </div>
+          
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: isMobile ? '8px' : '16px',
+            flexShrink: 0
+          }}>
+            <div style={{
+              width: '50px',
+              height: '24px',
+              background: 'var(--surface-secondary)',
+              borderRadius: '12px',
+              border: '1px solid var(--border-subtle)'
+            }} />
+            <div style={{
+              width: '60px',
+              height: '11px',
+              background: 'var(--surface-secondary)',
+              borderRadius: '6px'
+            }} />
+          </div>
         </div>
-        <div style={{ width: '50px', height: '11px', background: 'var(--surface-secondary)', borderRadius: '6px' }} />
-      </div>
-    ))}
+      ))}
+    </div>
   </div>
 ));
 
@@ -973,12 +1329,11 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
           </div>
           
           <div style={styles.statsGrid(isMobile)}>
-            {[...Array(4)].map((_, i) => <StatCardSkeleton key={i} />)}
+            {[...Array(4)].map((_, i) => <StatCardSkeleton key={i} isMobile={isMobile} />)}
           </div>
-          
           <div style={styles.chartsGrid(isMobile)}>
             <ChartSkeleton isMobile={isMobile} />
-            <ChartSkeleton isMobile={isMobile} />
+            <PopularTagsSkeleton isMobile={isMobile} />
           </div>
           
           <RecentActivitySkeleton isMobile={isMobile} />
@@ -997,7 +1352,7 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
       `}</style>
       <div style={styles.contentWrapper}>
         {/* Profile Header */}
-        <div style={{ ...styles.header(isMobile), opacity: showContent ? 1 : 0 }}>
+        <div style={{ ...styles.header(isMobile), opacity: showContent ? 1 : 0, background: 'var(--surface-tertiary)', }}>
           <div style={{
             display: 'flex',
             alignItems: isMobile ? 'flex-start' : 'center',
@@ -1150,6 +1505,7 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
                   
                   <button onClick={handleLogout} style={{
                     padding: '10px 20px', background: 'transparent',
+                    background: 'var(--surface-secondary)',
                     border: '1px solid var(--border-medium)', borderRadius: '12px',
                     fontSize: '13px', fontWeight: 500, cursor: 'pointer',
                     color: 'var(--accent-red)', display: 'flex', alignItems: 'center',
@@ -1157,7 +1513,7 @@ const ProfilePage = ({ user, onLogin, onLogout }) => {
                     width: isMobile ? '100%' : 'auto'
                   }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(224, 96, 96, 0.1)'; e.currentTarget.style.borderColor = 'var(--accent-red)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
+                  onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--surface-secondary)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
                     <FiLogOut size={14} /> Выйти
                   </button>
                 </>

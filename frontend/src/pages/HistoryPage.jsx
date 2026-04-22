@@ -23,34 +23,87 @@ import {
 } from 'react-icons/fi';
 
 // ========== СКЕЛЕТОН ЗАПРОСА ==========
-const ChatItemSkeleton = () => (
+const ChatItemSkeleton = ({ isMobile }) => (
   <div style={{
     background: 'var(--surface-secondary)',
     borderRadius: '20px',
-    padding: '20px',
+    padding: isMobile ? '16px' : '20px',
     border: '1px solid var(--border-medium)',
-    animation: 'pulse 1.5s ease-in-out infinite'
+    animation: 'pulse 1.5s ease-in-out infinite',
+    overflow: 'hidden'
   }}>
     {/* Верхняя строка: иконка + текст + кнопки */}
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1 }}>
+    <div style={{ 
+      display: 'flex', 
+      justifyContent: 'space-between', 
+      alignItems: 'flex-start', 
+      gap: isMobile ? '8px' : '12px' 
+    }}>
+      <div style={{ 
+        display: 'flex', 
+        alignItems: 'center', 
+        gap: isMobile ? '10px' : '14px', 
+        flex: 1, 
+        minWidth: 0
+      }}>
         {/* Иконка режима */}
-        <div style={{ width: '44px', height: '44px', borderRadius: '14px', background: 'var(--surface-tertiary)' }} />
-        <div style={{ flex: 1 }}>
+        <div style={{ 
+          width: isMobile ? '40px' : '44px', 
+          height: isMobile ? '40px' : '44px', 
+          borderRadius: '14px', 
+          background: 'var(--surface-tertiary)',
+          flexShrink: 0 
+        }} />
+        <div style={{ flex: 1, minWidth: 0 }}>
           {/* Заголовок запроса */}
-          <div style={{ height: '20px', background: 'var(--surface-tertiary)', borderRadius: '10px', marginBottom: '10px', width: '80%' }} />
+          <div style={{ 
+            height: isMobile ? '18px' : '20px', 
+            background: 'var(--surface-tertiary)', 
+            borderRadius: '10px', 
+            marginBottom: '10px', 
+            width: '90%',
+            maxWidth: '100%'
+          }} />
           {/* Метки */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '80px', height: '24px', background: 'var(--surface-tertiary)', borderRadius: '30px' }} />
-            <div style={{ width: '100px', height: '13px', background: 'var(--surface-tertiary)', borderRadius: '6px' }} />
-            <div style={{ width: '90px', height: '24px', background: 'var(--surface-tertiary)', borderRadius: '30px' }} />
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: isMobile ? '6px' : '12px', 
+            flexWrap: 'wrap' 
+          }}>
+            <div style={{ 
+              width: isMobile ? '60px' : '80px', 
+              height: isMobile ? '20px' : '24px', 
+              background: 'var(--surface-tertiary)', 
+              borderRadius: '30px' 
+            }} />
+            <div style={{ 
+              width: isMobile ? '70px' : '100px', 
+              height: '13px', 
+              background: 'var(--surface-tertiary)', 
+              borderRadius: '6px' 
+            }} />
           </div>
         </div>
       </div>
       {/* Кнопки */}
-      <div style={{ display: 'flex', gap: '8px' }}>
-        <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'var(--surface-tertiary)' }} />
-        <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'var(--surface-tertiary)' }} />
+      <div style={{ 
+        display: 'flex', 
+        gap: '8px', 
+        flexShrink: 0
+      }}>
+        <div style={{ 
+          width: isMobile ? '32px' : '36px', 
+          height: isMobile ? '32px' : '36px', 
+          borderRadius: '10px', 
+          background: 'var(--surface-tertiary)' 
+        }} />
+        <div style={{ 
+          width: isMobile ? '32px' : '36px', 
+          height: isMobile ? '32px' : '36px', 
+          borderRadius: '10px', 
+          background: 'var(--surface-tertiary)' 
+        }} />
       </div>
     </div>
   </div>
@@ -488,7 +541,7 @@ const HistoryPage = ({ user }) => {
                   animation: 'pulse 1.5s ease-in-out infinite'
                 }} />
               </div>
-              <ChatListSkeleton count={5} />
+              <ChatListSkeleton count={5} isMobile={isMobile}/>
             </div>
           ) : filteredChats.length === 0 ? (
             <div className="empty-state">
